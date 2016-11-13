@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contr1</string>
+    <string name="ginekologia">Ginekologia</string>
+    <string name="onkologia">Onkologia</string>
+    <string name="pediatria">Pediatria</string>
+    <string name="wybierz_kategorie">Wybierz kategorie</string>
+</resources>
