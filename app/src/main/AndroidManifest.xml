@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Secondary_activity" />
-        <activity android:name=".Ginekologia_lista"></activity>
+        <activity android:name=".Ginekologia_lista"/>
     </application>
 
 </manifest>

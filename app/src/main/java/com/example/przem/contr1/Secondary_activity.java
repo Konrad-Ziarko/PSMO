@@ -8,28 +8,28 @@ import android.widget.Toast;
 public class Secondary_activity extends AppCompatActivity {
 
     private Intent fromAct1;
-    private  int mnoznik,liczba;
+    private int liczba;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_secondary_activity);
+        setContentView(R.layout.second_activity);
+        //setContentView(R.layout.activity_secondary_activity);
         fromAct1=new Intent();
-        mnoznik=23;
+        liczba = fromAct1.getIntExtra("key", -1);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         fromAct1= getIntent();
-        liczba= fromAct1.getIntExtra("param1",0);
-        Toast.makeText(this,String.valueOf(liczba).toString(),Toast.LENGTH_SHORT).show();
+        liczba= fromAct1.getIntExtra("key", -1);
+        Toast.makeText(this,""+liczba,Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void onBackPressed()
     {
-        liczba=liczba*mnoznik;
         fromAct1.putExtra("param1",liczba);
         setResult(RESULT_OK,fromAct1);
         //finish();

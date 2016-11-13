@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/holo_blue_dark"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/textView"
+        android:text="Opis kroku\nasshdgrdgdhfgtgrhtfhtnasshdgrdgdhfgtgrhtfht\nerhtjyttjtjyjtnasshdgrdgdhfgtgrhtfht\nerhtjyttjtjyjt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/diagram"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:text="Obraz jeśli krok wymaga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
+</ScrollView>
