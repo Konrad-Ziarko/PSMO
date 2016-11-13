@@ -1,6 +1,6 @@
 package com.example.przem.contr1;
 
-public class AlgoritmInfo {
+public class AlgorithmInfo {
     protected String name;
     protected String steps;
     protected String meanTime;

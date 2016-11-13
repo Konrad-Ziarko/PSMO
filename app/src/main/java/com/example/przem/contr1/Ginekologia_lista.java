@@ -21,7 +21,7 @@ public class Ginekologia_lista extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
-        ContactAdapter ca = new ContactAdapter(createList(30));
+        AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
         recList.setAdapter(ca);
     }
 
@@ -42,14 +42,14 @@ public class Ginekologia_lista extends AppCompatActivity {
 
 
 
-    private List<AlgoritmInfo> createList(int size) {
+    private List<AlgorithmInfo> createList(int size) {
 
-        List<AlgoritmInfo> result = new ArrayList<AlgoritmInfo>();
+        List<AlgorithmInfo> result = new ArrayList<AlgorithmInfo>();
         for (int i=1; i <= size; i++) {
-            AlgoritmInfo algoritmInfo = new AlgoritmInfo();
-            algoritmInfo.name = AlgoritmInfo.NAME_PREFIX + i;
-            algoritmInfo.steps = AlgoritmInfo.STEPS_PREFIX + i;
-            algoritmInfo.meanTime = AlgoritmInfo.TIME_PREFIX + i + "[min|h]";
+            AlgorithmInfo algoritmInfo = new AlgorithmInfo();
+            algoritmInfo.name = AlgorithmInfo.NAME_PREFIX + i;
+            algoritmInfo.steps = AlgorithmInfo.STEPS_PREFIX + i;
+            algoritmInfo.meanTime = AlgorithmInfo.TIME_PREFIX + i + "[min|h]";
 
             result.add(algoritmInfo);
 

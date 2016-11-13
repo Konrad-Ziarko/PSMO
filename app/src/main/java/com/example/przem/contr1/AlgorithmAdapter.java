@@ -8,11 +8,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
+public class AlgorithmAdapter extends RecyclerView.Adapter<AlgorithmAdapter.ContactViewHolder> {
 
-    private List<AlgoritmInfo> contactList;
+    private List<AlgorithmInfo> contactList;
 
-    public ContactAdapter(List<AlgoritmInfo> contactList) {
+    public AlgorithmAdapter(List<AlgorithmInfo> contactList) {
         this.contactList = contactList;
     }
 
@@ -24,7 +24,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     @Override
     public void onBindViewHolder(ContactViewHolder contactViewHolder, int i) {
-        AlgoritmInfo ci = contactList.get(i);
+        AlgorithmInfo ci = contactList.get(i);
         contactViewHolder.vName.setText(ci.name);
         contactViewHolder.vSteps.setText(ci.steps);
         contactViewHolder.vMeanTime.setText(ci.meanTime);
