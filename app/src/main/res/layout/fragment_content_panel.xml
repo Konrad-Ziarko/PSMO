@@ -7,13 +7,13 @@
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:background="@android:color/holo_blue_dark"
     android:weightSum="1">
 
     <TextView
         android:id="@+id/textView"
-        android:text="Opis kroku\nasshdgrdgdhfgtgrhtfhtnasshdgrdgdhfgtgrhtfht\nerhtjyttjtjyjtnasshdgrdgdhfgtgrhtfht\nerhtjyttjtjyjt"
+        android:text="Opis kroku\n\n\n\n\n\n\n\n"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />

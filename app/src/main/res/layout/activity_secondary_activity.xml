@@ -8,6 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.przem.contr1.Secondary_activity">
+    tools:context="com.example.psmo.medteam1.Secondary_activity">
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.przem.contr1;
+package com.example.psmo.medteam1;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

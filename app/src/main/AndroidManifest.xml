@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.przem.contr1">
+    package="com.example.psmo.medteam1">
 
     <application
         android:allowBackup="true"
@@ -8,15 +8,15 @@
         android:label="Medical Algorithms"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.psmo.medteam1.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Secondary_activity" />
-        <activity android:name=".Ginekologia_lista"/>
+        <activity android:name="com.example.psmo.medteam1.Secondary_activity" />
+        <activity android:name="com.example.psmo.medteam1.Ginekologia_lista"/>
     </application>
 
 </manifest>

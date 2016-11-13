@@ -1,4 +1,4 @@
-package com.example.przem.contr1;
+package com.example.psmo.medteam1;
 
 import org.junit.Test;
 

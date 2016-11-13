@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:id="@+id/activity_main"
+    android:baselineAligned="false"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:orientation="horizontal"
-    tools:context="com.zkt.konradziarko.medapp.MainActivity">
+    tools:context="com.example.psmo.medteam1.MainActivity">
 
     <fragment
         android:id="@+id/content"
@@ -14,7 +15,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="3"
-        class="com.zkt.konradziarko.medapp.ContentFragment"
+        class="com.example.psmo.medteam1.ContentFragment"
         tools:layout="@layout/fragment_content_panel" />
 
     <fragment
@@ -22,6 +23,6 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        class="com.zkt.konradziarko.medapp.DecisionFragment"
+        class="com.example.psmo.medteam1.DecisionFragment"
         tools:layout="@layout/fragment_decision_panel" />
 </LinearLayout>

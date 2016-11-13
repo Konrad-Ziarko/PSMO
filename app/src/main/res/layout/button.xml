@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle"
     android:id="@+id/angry_btn"
 
-    android:text="Button"
+
     android:textColor="#FFFFFF"
     android:textSize="30sp"
 

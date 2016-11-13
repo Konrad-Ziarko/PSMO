@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Contr1</string>
+    <string name="wybierz_kategorie">Wybierz kategorie</string>
+    <string name="ginekologia">Ginekologia</string>
+    <string name="pediatria">Pediatria</string>
+    <string name="onkologia">Onkologia</string>
 </resources>

@@ -19,10 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:background="@color/cardview_dark_background"
-            android:text="Jakis algorytm"
             android:gravity="center_vertical"
             android:textColor="@android:color/white"
-            android:textSize="14dp"/>
+            android:textSize="14sp"/>
         <LinearLayout
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
@@ -37,7 +36,6 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="*liczba krokow*"
                 android:textSize="12sp" />
 
             <TextView
@@ -45,7 +43,6 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="*sredni czas*"
                 android:textSize="12sp"
                 />
         </LinearLayout>

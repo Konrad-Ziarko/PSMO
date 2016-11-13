@@ -1,12 +1,8 @@
-package com.example.przem.contr1;
+package com.example.psmo.medteam1;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-
-/**
- * Created by Konrad on 13.11.2016.
- */
 
 public class AlgorithmView extends View {
 

@@ -1,4 +1,4 @@
-package com.example.przem.contr1;
+package com.example.psmo.medteam1;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,18 +6,14 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-/**
- * Created by Konrad on 13.11.2016.
- */
-
-public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
+class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
 
     private OnItemClickListener mListener;
-    public interface OnItemClickListener {
-        public void onItemClick(View view, int position);
+    interface OnItemClickListener {
+        void onItemClick(View view, int position);
     }
-    GestureDetector mGestureDetector;
-    public RecyclerItemClickListener(Context context, OnItemClickListener listener) {
+    private GestureDetector mGestureDetector;
+    RecyclerItemClickListener(Context context, OnItemClickListener listener) {
         mListener = listener;
         mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override

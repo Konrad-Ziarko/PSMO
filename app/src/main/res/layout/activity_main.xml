@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,10 +9,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="30dp"
     android:orientation="vertical"
-    tools:context="com.example.przem.contr1.MainActivity">
+    tools:context="com.example.psmo.medteam1.MainActivity">
 
     <TextView
-        android:text="Wybierz kategorie"
+        android:text="@string/wybierz_kategorie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
@@ -24,7 +23,7 @@
         android:layout_height="335dp">
 
         <Button
-            android:text="Ginekologia"
+            android:text="@string/ginekologia"
             android:background="@drawable/buttonshape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +38,7 @@
             />
 
         <Button
-            android:text="Pediatria"
+            android:text="@string/pediatria"
             android:background="@drawable/buttonshape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,7 +53,7 @@
             />
 
         <Button
-            android:text="Onkologia"
+            android:text="@string/onkologia"
             android:background="@drawable/buttonshape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

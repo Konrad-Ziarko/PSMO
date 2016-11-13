@@ -1,4 +1,4 @@
-package com.example.przem.contr1;
+package com.example.psmo.medteam1;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +55,7 @@ public class Ginekologia_lista extends AppCompatActivity {
 
     private List<AlgorithmInfo> createList(int size) {
 
-        List<AlgorithmInfo> result = new ArrayList<AlgorithmInfo>();
+        List<AlgorithmInfo> result = new ArrayList<>();
         for (int i=0; i < size; i++) {
             AlgorithmInfo algoritmInfo = new AlgorithmInfo();
             algoritmInfo.name = AlgorithmInfo.NAME_PREFIX + i;
