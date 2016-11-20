@@ -1,14 +1,23 @@
 package com.example.psmo.medteam1;
 
 import android.content.Intent;
+import android.graphics.Matrix;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Secondary_activity extends AppCompatActivity {
 
     private Intent fromAct1;
     private int liczba;
+    ImageView imageView;
+    Matrix matrix = new Matrix();
+    Float scale = 1f;
+    ScaleGestureDetector SGD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +25,9 @@ public class Secondary_activity extends AppCompatActivity {
         //setContentView(R.layout.activity_secondary_activity);
         fromAct1=new Intent();
         liczba = fromAct1.getIntExtra("key", -1);
+
+        //imageView = (ImageView) findViewById(R.id.img);
+        //SGD = new ScaleGestureDetector(this, new ScaleListener());
     }
 
     @Override
