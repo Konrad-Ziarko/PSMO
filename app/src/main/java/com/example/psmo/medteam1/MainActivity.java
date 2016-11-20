@@ -37,20 +37,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick (View v) {
-       switch (v.getId()){
-           case R.id.button:
-               Intent go2Act2 = new Intent(MainActivity.this, Ginekologia_lista.class);
-               startActivity(go2Act2);
-               break;
-           case R.id.button2:
-               Intent go2Act3 = new Intent(MainActivity.this, Pediatria_lista.class);
-               startActivity(go2Act3);
-               break;
-           case R.id.button3:
-               Intent go2Act4 = new Intent(MainActivity.this, Onkologia_lista.class);
-               startActivity(go2Act4);
-               break;
-       }
+        switch (v.getId()){
+            case R.id.button:
+                Intent go2Act2 = new Intent(MainActivity.this, Ginekologia_lista.class);
+                startActivity(go2Act2);
+                break;
+            case R.id.button2:
+                Intent go2Act3 = new Intent(MainActivity.this, Pediatria_lista.class);
+                startActivity(go2Act3);
+                break;
+            case R.id.button3:
+                Intent go2Act4 = new Intent(MainActivity.this, Onkologia_lista.class);
+                startActivity(go2Act4);
+                break;
+        }
     }
 }
 

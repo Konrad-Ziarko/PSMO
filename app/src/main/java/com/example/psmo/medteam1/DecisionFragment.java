@@ -11,11 +11,11 @@ public class DecisionFragment extends ListFragment {
 
     public static class Info{
         static final String[] INFO =
-        {
-            "Jakis wybor",
-            "Inny wybor",
-            "Jeszcze inny wybor",
-        };
+                {
+                        "Jakis wybor",
+                        "Inny wybor",
+                        "Jeszcze inny wybor",
+                };
     }
     private ListView lw;
     @Override
