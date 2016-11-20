@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     android:id="@+id/activity_main"
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context="com.example.psmo.medteam1.Secondary_activity">
 
+
     <fragment
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
         class="com.example.psmo.medteam1.ContentFragment"
         tools:layout="@layout/fragment_content_panel" />
+    <fragment
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        class="com.example.psmo.medteam1.TouchImageFragment"
+        tools:layout="@layout/fragment_touch_image_panel" />
     <fragment
         android:id="@+id/decision"
         android:layout_width="match_parent"

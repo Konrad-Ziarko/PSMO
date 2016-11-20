@@ -14,7 +14,6 @@ public class DecisionFragment extends ListFragment {
         {
             "Jakis wybor",
             "Inny wybor",
-            "Inny wybor",
             "Jeszcze inny wybor",
         };
     }
