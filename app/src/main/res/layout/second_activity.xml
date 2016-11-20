@@ -9,22 +9,19 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context="com.example.psmo.medteam1.Secondary_activity">
+    tools:context="com.example.psmo.medteam1.Secondary_activity"
+    android:weightSum="4"
+    >
 
 
     <fragment
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         class="com.example.psmo.medteam1.ContentFragment"
         tools:layout="@layout/fragment_content_panel" />
-    <fragment
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        class="com.example.psmo.medteam1.TouchImageFragment"
-        tools:layout="@layout/fragment_touch_image_panel" />
+
     <fragment
         android:id="@+id/decision"
         android:layout_width="match_parent"

@@ -2,7 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -11,4 +13,11 @@
         android:text="Opis Opis Opis Opis Opis Opis
         OPIS OPIS OPIS OPIS OPIS OPIS OPIS OPIS OPIS"/>
 
+    <com.example.psmo.medteam1.TouchImageView
+        android:id="@+id/img"
+        android:scaleType="matrix"
+        android:src="@drawable/diagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>

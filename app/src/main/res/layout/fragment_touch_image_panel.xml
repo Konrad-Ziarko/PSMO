@@ -4,12 +4,6 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
-    <com.example.psmo.medteam1.TouchImageView
-        android:id="@+id/img"
-        android:scaleType="matrix"
-        android:src="@drawable/diagram"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+
 
 </LinearLayout>
