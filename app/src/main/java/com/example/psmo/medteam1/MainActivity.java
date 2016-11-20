@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText jeditText1;
     private Button jButton1;
+    private Button jButton2;
+    private Button jButton3;
     private TextView jTextView1;
     private RadioButton jradiobutton1;
     private RadioButton jradiobutton2;
@@ -28,6 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         jButton1=(Button) findViewById(R.id.button);
         jButton1.setOnClickListener(this);
+        jButton2=(Button) findViewById(R.id.button2);
+        jButton2.setOnClickListener(this);
+        jButton3=(Button) findViewById(R.id.button3);
+        jButton3.setOnClickListener(this);
     }
     @Override
     public void onClick (View v) {
@@ -35,6 +41,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            case R.id.button:
                Intent go2Act2 = new Intent(MainActivity.this, Ginekologia_lista.class);
                startActivity(go2Act2);
+               break;
+           case R.id.button2:
+               Intent go2Act3 = new Intent(MainActivity.this, Pediatria_lista.class);
+               startActivity(go2Act3);
+               break;
+           case R.id.button3:
+               Intent go2Act4 = new Intent(MainActivity.this, Onkologia_lista.class);
+               startActivity(go2Act4);
                break;
        }
     }
