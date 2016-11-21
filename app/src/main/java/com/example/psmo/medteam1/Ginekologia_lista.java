@@ -32,6 +32,7 @@ public class Ginekologia_lista extends AppCompatActivity {
                 Intent myIntent = new Intent(Ginekologia_lista.this, Secondary_activity.class);
                 //zapakowac do intenta info jaki algorytm
                 myIntent.putExtra("key", position);
+                myIntent.putExtra("algType", "ginekologia");
                 Ginekologia_lista.this.startActivity(myIntent);
             }
         }));
