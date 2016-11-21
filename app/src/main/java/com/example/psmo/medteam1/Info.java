@@ -1,6 +1,6 @@
 package com.example.psmo.medteam1;
 
-class AlgorithmInfo {
+class Info {
     String name;
     String steps;
     String meanTime;

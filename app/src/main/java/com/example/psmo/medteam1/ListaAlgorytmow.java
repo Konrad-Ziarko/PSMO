@@ -60,15 +60,15 @@ public class ListaAlgorytmow extends AppCompatActivity {
     }
 
 
+    private List<Info> createList(int size) {
 
-    private List<AlgorithmInfo> createList(int size) {
-
-        List<AlgorithmInfo> result = new ArrayList<>();
+        //czytanie z xmla ile jest algorytmow
+        List<Info> result = new ArrayList<>();
         for (int i=0; i < size; i++) {
-            AlgorithmInfo algoritmInfo = new AlgorithmInfo();
-            algoritmInfo.name = algType + " " + AlgorithmInfo.NAME_PREFIX + i;
-            algoritmInfo.steps = AlgorithmInfo.STEPS_PREFIX + i;
-            algoritmInfo.meanTime = AlgorithmInfo.TIME_PREFIX + i + "[min|h]";
+            Info algoritmInfo = new Info();
+            algoritmInfo.name = algType + " " + Info.NAME_PREFIX + i;
+            algoritmInfo.steps = Info.STEPS_PREFIX + i;
+            algoritmInfo.meanTime = Info.TIME_PREFIX + i + "[min|h]";
 
             result.add(algoritmInfo);
 
