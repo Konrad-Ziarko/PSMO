@@ -30,6 +30,7 @@ public class Ginekologia_lista extends AppCompatActivity {
             public void onItemClick(View v, int position) {
                 //Toast.makeText(v.getContext(), "" + position, Toast.LENGTH_SHORT).show();
                 Intent myIntent = new Intent(Ginekologia_lista.this, Secondary_activity.class);
+                //zapakowac do intenta info jaki algorytm
                 myIntent.putExtra("key", position);
                 Ginekologia_lista.this.startActivity(myIntent);
             }

@@ -23,6 +23,8 @@ public class Secondary_activity extends AppCompatActivity {
         //setContentView(R.layout.activity_secondary_activity);
         fromAct1=new Intent();
         liczba = fromAct1.getIntExtra("key", -1);
+        //zaladowac xml'a
+        
     }
 
     @Override
