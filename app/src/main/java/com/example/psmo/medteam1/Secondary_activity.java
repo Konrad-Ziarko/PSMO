@@ -8,6 +8,14 @@ import android.view.ScaleGestureDetector;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.List;
+
 public class Secondary_activity extends AppCompatActivity {
 
     private Intent fromAct1;
@@ -29,6 +37,16 @@ public class Secondary_activity extends AppCompatActivity {
 
         //zaladowac xml'a
 
+        List<AlgorithmElement> list = null;
+        try {
+            InputStream is = getAssets().open("file.xml");
+            list = new XmlParser().parse(is);
+            Toast.makeText(this,list.get(0).getDescription(),Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -36,7 +54,7 @@ public class Secondary_activity extends AppCompatActivity {
         super.onResume();
         fromAct1= getIntent();
         liczba= fromAct1.getIntExtra("key", -1);
-        Toast.makeText(this,algType + " " + liczba,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,algType + " " + liczba,Toast.LENGTH_SHORT).show();
 
     }
 
