@@ -10,9 +10,9 @@ import java.util.List;
 
 class AlgorithmAdapter extends RecyclerView.Adapter<AlgorithmAdapter.ContactViewHolder> {
 
-    private List<AlgorithmInfo> contactList;
+    private List<Info> contactList;
 
-    AlgorithmAdapter(List<AlgorithmInfo> contactList) {
+    AlgorithmAdapter(List<Info> contactList) {
         this.contactList = contactList;
     }
 
@@ -24,7 +24,7 @@ class AlgorithmAdapter extends RecyclerView.Adapter<AlgorithmAdapter.ContactView
 
     @Override
     public void onBindViewHolder(ContactViewHolder contactViewHolder, int i) {
-        AlgorithmInfo ci = contactList.get(i);
+        Info ci = contactList.get(i);
         contactViewHolder.vName.setText(ci.name);
         contactViewHolder.vSteps.setText(ci.steps);
         contactViewHolder.vMeanTime.setText(ci.meanTime);

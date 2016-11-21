@@ -1,8 +1,8 @@
 package com.example.psmo.medteam1;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -12,17 +12,17 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Radek on 20.11.2016.
- */
+public class ListaAlgorytmow extends AppCompatActivity {
 
-public class Pediatria_lista extends AppCompatActivity {
+    public String algType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pediatria_lista);
-        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList2);
+        Bundle p = getIntent().getExtras();
+        algType = p.getString("algType");
+        setContentView(R.layout.activity_lista);
+        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -33,9 +33,13 @@ public class Pediatria_lista extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int position) {
                 //Toast.makeText(v.getContext(), "" + position, Toast.LENGTH_SHORT).show();
-                Intent myIntent = new Intent(Pediatria_lista.this, Secondary_activity.class);
-                myIntent.putExtra("key", position);
-                Pediatria_lista.this.startActivity(myIntent);
+                Intent myIntent = new Intent(ListaAlgorytmow.this, Secondary_activity.class);
+                //zapakowac do intenta info jaki algorytm
+                Bundle b = new Bundle();
+                b.putInt("key", position);
+                b.putString("algType", algType);
+                myIntent.putExtras(b);
+                ListaAlgorytmow.this.startActivity(myIntent);
             }
         }));
     }
@@ -56,15 +60,15 @@ public class Pediatria_lista extends AppCompatActivity {
     }
 
 
+    private List<Info> createList(int size) {
 
-    private List<AlgorithmInfo> createList(int size) {
-
-        List<AlgorithmInfo> result = new ArrayList<>();
+        //czytanie z xmla ile jest algorytmow
+        List<Info> result = new ArrayList<>();
         for (int i=0; i < size; i++) {
-            AlgorithmInfo algoritmInfo = new AlgorithmInfo();
-            algoritmInfo.name = AlgorithmInfo.NAME_PREFIX + i;
-            algoritmInfo.steps = AlgorithmInfo.STEPS_PREFIX + i;
-            algoritmInfo.meanTime = AlgorithmInfo.TIME_PREFIX + i + "[min|h]";
+            Info algoritmInfo = new Info();
+            algoritmInfo.name = algType + " " + Info.NAME_PREFIX + i;
+            algoritmInfo.steps = Info.STEPS_PREFIX + i;
+            algoritmInfo.meanTime = Info.TIME_PREFIX + i + "[min|h]";
 
             result.add(algoritmInfo);
 
