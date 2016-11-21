@@ -16,9 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.psmo.medteam1.Secondary_activity" />
-        <activity android:name="com.example.psmo.medteam1.Ginekologia_lista"/>
-        <activity android:name="com.example.psmo.medteam1.Pediatria_lista" android:exported="true"/>
-        <activity android:name="com.example.psmo.medteam1.Onkologia_lista" android:exported="true"/>
+        <activity android:name="com.example.psmo.medteam1.ListaAlgorytmow"/>
     </application>
 
 </manifest>

@@ -12,12 +12,16 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ginekologia_lista extends AppCompatActivity {
+public class ListaAlgorytmow extends AppCompatActivity {
+
+    public String algType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ginekologia_lista);
+        Bundle p = getIntent().getExtras();
+        algType = p.getString("algType");
+        setContentView(R.layout.activity_lista);
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -29,11 +33,13 @@ public class Ginekologia_lista extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int position) {
                 //Toast.makeText(v.getContext(), "" + position, Toast.LENGTH_SHORT).show();
-                Intent myIntent = new Intent(Ginekologia_lista.this, Secondary_activity.class);
+                Intent myIntent = new Intent(ListaAlgorytmow.this, Secondary_activity.class);
                 //zapakowac do intenta info jaki algorytm
-                myIntent.putExtra("key", position);
-                myIntent.putExtra("algType", "ginekologia");
-                Ginekologia_lista.this.startActivity(myIntent);
+                Bundle b = new Bundle();
+                b.putInt("key", position);
+                b.putString("algType", algType);
+                myIntent.putExtras(b);
+                ListaAlgorytmow.this.startActivity(myIntent);
             }
         }));
     }
@@ -60,7 +66,7 @@ public class Ginekologia_lista extends AppCompatActivity {
         List<AlgorithmInfo> result = new ArrayList<>();
         for (int i=0; i < size; i++) {
             AlgorithmInfo algoritmInfo = new AlgorithmInfo();
-            algoritmInfo.name = AlgorithmInfo.NAME_PREFIX + i;
+            algoritmInfo.name = algType + " " + AlgorithmInfo.NAME_PREFIX + i;
             algoritmInfo.steps = AlgorithmInfo.STEPS_PREFIX + i;
             algoritmInfo.meanTime = AlgorithmInfo.TIME_PREFIX + i + "[min|h]";
 

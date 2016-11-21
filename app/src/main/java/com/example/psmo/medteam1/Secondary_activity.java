@@ -12,7 +12,7 @@ public class Secondary_activity extends AppCompatActivity {
 
     private Intent fromAct1;
     private int liczba;
-    private String namespace;
+    private String algType;
     ImageView imageView;
     Matrix matrix = new Matrix();
     Float scale = 1f;
@@ -21,11 +21,12 @@ public class Secondary_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle p = getIntent().getExtras();
+        liczba = p.getInt("key", -1);
+        algType = p.getString("algType");
         setContentView(R.layout.second_activity);
-        //setContentView(R.layout.activity_secondary_activity);
-        fromAct1=new Intent();
-        liczba = fromAct1.getIntExtra("key", -1);
-        namespace = fromAct1.getStringExtra("algType");
+        //setContentView(R.layout.activity_alg_step);
+
         //zaladowac xml'a
 
     }
@@ -35,7 +36,7 @@ public class Secondary_activity extends AppCompatActivity {
         super.onResume();
         fromAct1= getIntent();
         liczba= fromAct1.getIntExtra("key", -1);
-        Toast.makeText(this,namespace + " " + liczba,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,algType + " " + liczba,Toast.LENGTH_SHORT).show();
 
     }
 
