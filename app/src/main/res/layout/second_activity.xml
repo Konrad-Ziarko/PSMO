@@ -10,7 +10,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context="com.example.psmo.medteam1.Secondary_activity"
-    android:weightSum="4"
+    android:weightSum="10"
     >
 
 
@@ -18,17 +18,23 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="9"
         class="com.example.psmo.medteam1.ContentFragment"
         tools:layout="@layout/fragment_content_panel" />
 
-    <fragment
-        android:id="@+id/decision"
+    <Button
+        android:text="Start algorytmu"
+        android:background="@drawable/buttonshape"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:id="@+id/button"
+        android:textColor="#FFFFFFFF"
+        android:textSize="30sp"
+        android:shadowColor="#ff204db7"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="2"
         android:layout_weight="1"
-        class="com.example.psmo.medteam1.DecisionFragment"
-        tools:layout="@layout/fragment_decision_panel" />
-
+        android:layout_marginBottom="10dp" />
 
 </LinearLayout>

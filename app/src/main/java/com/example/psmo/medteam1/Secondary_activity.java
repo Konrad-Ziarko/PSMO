@@ -5,10 +5,18 @@ import android.graphics.Matrix;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ScaleGestureDetector;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class Secondary_activity extends AppCompatActivity {
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+public class Secondary_activity extends AppCompatActivity implements View.OnClickListener {
 
     private Intent fromAct1;
     private int liczba;
@@ -16,13 +24,33 @@ public class Secondary_activity extends AppCompatActivity {
     Matrix matrix = new Matrix();
     Float scale = 1f;
     ScaleGestureDetector SGD;
+    private Button jButton1;
+    private String algType;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
         //setContentView(R.layout.activity_secondary_activity);
-        fromAct1=new Intent();
-        liczba = fromAct1.getIntExtra("key", -1);
+        Bundle p = getIntent().getExtras();
+        liczba = p.getInt("key", -1);
+        algType = p.getString("algType");
+        //liczba = fromAct1.getIntExtra("key", -1);
+        jButton1=(Button) findViewById(R.id.button);
+        jButton1.setOnClickListener(this);
+
+        List<AlgorithmElement> list = null;
+        try {
+
+            InputStream is = getAssets().open("file.xml");
+            list = new XmlParser().parse(is);
+            Toast.makeText(this,list.get(0).getDescription(),Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
@@ -41,5 +69,14 @@ public class Secondary_activity extends AppCompatActivity {
         setResult(RESULT_OK,fromAct1);
         //finish();
         super.onBackPressed();
+    }
+
+    @Override
+    public void onClick(View v) {
+                Bundle bundle =new Bundle();
+                Intent go2Act2 = new Intent(Secondary_activity.this, Algorithm_activity.class);
+                go2Act2.putExtra("parentID",0);
+                startActivity(go2Act2);
+
     }
 }

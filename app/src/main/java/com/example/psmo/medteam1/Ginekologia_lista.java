@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Ginekologia_lista extends AppCompatActivity {
 
+    public String algType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,14 +24,19 @@ public class Ginekologia_lista extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(linearLayoutManager);
-        AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
+        AlgorithmAdapter ca = new AlgorithmAdapter(createList(2));
         recList.setAdapter(ca);
         recList.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener(){
             @Override
             public void onItemClick(View v, int position) {
                 //Toast.makeText(v.getContext(), "" + position, Toast.LENGTH_SHORT).show();
                 Intent myIntent = new Intent(Ginekologia_lista.this, Secondary_activity.class);
-                myIntent.putExtra("key", position);
+                //myIntent.putExtra("key", position);
+                Bundle b = new Bundle();
+                b.putInt("key", position);
+                b.putString("algType", algType);
+                myIntent.putExtras(b);
+                //ListaAlgorytmow.this.startActivity(myIntent);
                 Ginekologia_lista.this.startActivity(myIntent);
             }
         }));
@@ -56,14 +62,17 @@ public class Ginekologia_lista extends AppCompatActivity {
     private List<AlgorithmInfo> createList(int size) {
 
         List<AlgorithmInfo> result = new ArrayList<>();
+        AlgorithmInfo algorithmInfo = new AlgorithmInfo();
+        algorithmInfo.name = "Algorytm postępowania w niedokrwistości ciężarnych";
+        algorithmInfo.steps = "Kroki: 6";
+        algorithmInfo.meanTime = "Autor: dr. n. med. Marcin Baum";
+        result.add(algorithmInfo);
         for (int i=0; i < size; i++) {
             AlgorithmInfo algoritmInfo = new AlgorithmInfo();
             algoritmInfo.name = AlgorithmInfo.NAME_PREFIX + i;
             algoritmInfo.steps = AlgorithmInfo.STEPS_PREFIX + i;
             algoritmInfo.meanTime = AlgorithmInfo.TIME_PREFIX + i + "[min|h]";
-
             result.add(algoritmInfo);
-
         }
 
         return result;

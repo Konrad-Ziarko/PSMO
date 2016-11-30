@@ -35,9 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         jButton3=(Button) findViewById(R.id.button3);
         jButton3.setOnClickListener(this);
     }
+
+    private final String ginekologia = "Ginekologia";
+    private final String pediatria = "Pediatria";
+    private final String onkologia = "Onkologia";
     @Override
     public void onClick (View v) {
-        switch (v.getId()){
+        /*switch (v.getId()){
             case R.id.button:
                 Intent go2Act2 = new Intent(MainActivity.this, Ginekologia_lista.class);
                 startActivity(go2Act2);
@@ -47,10 +51,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(go2Act3);
                 break;
             case R.id.button3:
-                Intent go2Act4 = new Intent(MainActivity.this, Onkologia_lista.class);
+                Intent go2Act4 = new Intent(MainActivity.this, Algorithm_activity.class);
                 startActivity(go2Act4);
                 break;
+        }*/
+
+        Intent go2Act2 = null;
+        Bundle b = new Bundle();
+        int i = v.getId();
+        go2Act2 = new Intent(MainActivity.this, ListaAlgorytmow.class);
+        if (i == R.id.button) {
+            b.putString("algType", ginekologia);
+        } else if (i == R.id.button2) {
+            b.putString("algType", pediatria);
+        } else if (i == R.id.button3) {
+            b.putString("algType", onkologia);
         }
+        go2Act2.putExtras(b);
+        startActivity(go2Act2);
     }
 }
 

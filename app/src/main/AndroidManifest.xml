@@ -8,17 +8,23 @@
         android:label="Medical Algorithms"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.psmo.medteam1.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.psmo.medteam1.Secondary_activity" />
-        <activity android:name="com.example.psmo.medteam1.Ginekologia_lista"/>
-        <activity android:name="com.example.psmo.medteam1.Pediatria_lista" android:exported="true"/>
-        <activity android:name="com.example.psmo.medteam1.Onkologia_lista" android:exported="true"/>
+        <activity android:name=".Secondary_activity" />
+        <activity android:name=".Ginekologia_lista" />
+        <activity
+            android:name=".Pediatria_lista"
+            android:exported="true" />
+        <activity
+            android:name=".Onkologia_lista"
+            android:exported="true" />
+        <activity android:name=".Algorithm_activity"></activity>
+        <activity android:name="com.example.psmo.medteam1.ListaAlgorytmow"/>
     </application>
 
 </manifest>
