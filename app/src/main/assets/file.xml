@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<id attribute = "2">
+  <name>Nieprzytomna pacjentka z widoczną ciążą</name>
+  <steps>20</steps>
+  <meantime>15min</meantime>
+
+  <element id="1">
+    <description>Ciężarna nieprzytomna.</description>
+    <successors>
+      <child id ="2"></child>
+      <child id ="3"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+
+  <element id="2">
+    <description>Zatrzymanie akcji serca.</description>
+    <successors>
+      <child id ="4"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="3">
+    <description>Czynność serca zachowana, oddech obecny.</description>
+    <successors>
+      <child id ="5"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="4">
+    <description>Postępowanie zgodne z algorytmem "Ciężarna z zatrzymaniem krążenia".</description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="5">
+    <description>Obowiązkowe monitorowanie (EKG, pulsoksymetria, gazometria).</description>
+    <successors>
+      <child id="6"></child>
+      <child id="7"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="6">
+    <description>Stan po urazie.</description>
+    <successors>
+      <child id="8"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="7">
+    <description>Bez urazu w wywiadzie.</description>
+    <successors>
+      <child id="9"></child>
+      <child id="10"></child>
+      <child id="11"></child>
+    </successors>
+    <image></image>
+    <extraDescription>Uciężarnych z rozpoznaną niedokrwistością dobowa doustna dawka żelaza [...]</extraDescription>
+  </element>
+  <element id="8">
+    <description>
+      * unieruchomić odcinek szyjny kręgosłupa (np. kołnierzem Schantza);
+      * zapewnić drożność dróg oddechowych;
+      * monitorować pulsoksymetrię;
+      * założyć 2 duże dostępy dożylne, rozpocząć płynoterapię;
+      * założyć cewnik do pęcherza moczowego i ocenić diurezę;
+      * ocenić tętno i ciśnienie krwi;
+      * ocenić w skali śpiączki Glasgow
+    </description>
+    <successors>
+      <child id="12">Transport do SOR</child>
+    </successors>
+    <image></image>
+    <extraDescription>Do unieruchomienia odcinka szyjnego kręgosłupa [...]</extraDescription>
+  </element>
+  <element id="9">
+    <description>W trakcie napadu drgawek.</description>
+    <successors>
+      <child id="13"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="10">
+    <description>Po napadzie drgawek.</description>
+    <successors>
+      <child id="14"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="11">
+    <description>Bez drgawek w wywiadzie.</description>
+    <successors>
+      <child id="15"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="12">
+    <description>
+      * ocenić wiek ciąży;
+      * ocenić czynnośc serca płodu;
+    </description>
+    <successors>
+      <child id="16"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="13">
+    <description>Przerwanie napadu lub stanu padaczkowego.</description>
+    <successors>
+      <child id="14"></child>
+    </successors>
+    <image></image>
+    <extraDescription>Drgawki przerywa się, podając [...]</extraDescription>
+  </element>
+  <element id="14">
+    <description>Poszukiwanie przyczyny napadu.</description>
+    <successors>
+      <child id="17">Rzucawka</child>
+      <child id="18">Inna przyczyna</child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="15">
+    <description>Toksykologia (alkohol, narkotyki, hemoglobina tlenkowęglowa). Badania neuroobrazowe EKG, troponina.</description>
+    <successors>
+      <child id="19"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="16">
+    <description>Badania dodatkowe
+      * morfologia krwi;
+      * grupa krwi, próba krzyżowa;
+      * pełny panel metaboliczny (glikemia, elektrolity);
+      * koagulogram;
+      * podstawowe USG położnicze;
+      * CT, MR, RTG klatki piersiowej w zależności od wskazań
+    </description>
+    <successors>
+      <child id="20"></child>
+    </successors>
+    <image></image>
+    <extraDescription>U ciężarnej nieprzytomnej obowiązuje wykonanie USG [...]</extraDescription>
+  </element>
+  <element id="17">
+    <description>Rzucawka
+      * rozpocznij leczenie siarczanem magnezu;
+      * stabilizacja stanu;
+      * zaplanuj poród
+    </description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription>W przypadku rzucawki podaje się siarczan magnezu [...]</extraDescription>
+  </element>
+  <element id="18">
+    <description>Leczenie przyczynowe. Konsultacja specjalisty.</description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription>Głównym celem konsultacji specjalisty [...]</extraDescription>
+  </element>
+  <element id="19">
+    <description>Monitorowanie ciąży (KTG, USG). Dalsze postępowanie w zależności od wyników badań.</description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="20">
+    <description>Oceń wskazania do cięcia cesarskiego.</description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+</id>
