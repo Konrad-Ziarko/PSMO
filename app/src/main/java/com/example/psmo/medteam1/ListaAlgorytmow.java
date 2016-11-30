@@ -1,8 +1,8 @@
 package com.example.psmo.medteam1;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -27,7 +27,6 @@ public class ListaAlgorytmow extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(linearLayoutManager);
-        //AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
         AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
         recList.setAdapter(ca);
         recList.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener(){
@@ -61,12 +60,12 @@ public class ListaAlgorytmow extends AppCompatActivity {
     }
 
 
-    private List<AlgorithmInfo> createList(int size) {
+    private List<Info> createList(int size) {
 
         //czytanie z xmla ile jest algorytmow
-        List<AlgorithmInfo> result = new ArrayList<>();
+        List<Info> result = new ArrayList<>();
         for (int i=0; i < size; i++) {
-            AlgorithmInfo algoritmInfo = new AlgorithmInfo();
+            Info algoritmInfo = new Info();
             algoritmInfo.name = algType + " " + Info.NAME_PREFIX + i;
             algoritmInfo.steps = Info.STEPS_PREFIX + i;
             algoritmInfo.meanTime = Info.TIME_PREFIX + i + "[min|h]";
