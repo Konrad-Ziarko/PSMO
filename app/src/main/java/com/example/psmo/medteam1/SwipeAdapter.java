@@ -28,7 +28,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
     private Context c;
     private int nextelement;
     private int count_successors;
-
+    private int image;
     public SwipeAdapter(FragmentManager fm, Context c,int parentID)
     {
         super(fm);
@@ -61,6 +61,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
             nextelement=list.get(parentID).getSuccessors().get(position).getSucId();
             count_successors=list.get(parentID).getSuccessors().size();
             krok=list.get(nextelement-1).getDescription();
+            image= c.getResources().getIdentifier(list.get(nextelement-1).getB64Image(), "drawable", c.getPackageName());
             extrainfo=list.get(nextelement-1).getExtraDescription();
         } catch (XmlPullParserException e1)
             {
@@ -77,6 +78,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         bundle.putString("opis",opis);
         bundle.putString("krok",krok);
         bundle.putString("extrainfo",extrainfo);
+        bundle.putInt("image",image);
         fragment.setArguments(bundle);
 
         return fragment;

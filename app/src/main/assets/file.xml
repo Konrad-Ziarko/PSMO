@@ -120,7 +120,7 @@
     <successors>
       <child id="14"></child>
     </successors>
-    <image></image>
+    <image>alg_1</image>
     <extraDescription>Drgawki przerywa się, podając [...]</extraDescription>
   </element>
   <element id="14">
@@ -152,8 +152,12 @@
     <successors>
       <child id="20"></child>
     </successors>
-    <image></image>
-    <extraDescription>U ciężarnej nieprzytomnej obowiązuje wykonanie USG [...]</extraDescription>
+    <image>alg_2</image>
+    <extraDescription>U ciężarnej nieprzytomnej obowiązuje wykonanie USG
+    zarówno w celu oceny płodu jak i narządów matki. Badania wykorzystujące
+      promieniowanie jonizujące(RTG, TK) należy ograniczyć do niezbędnego minimum(tab.2)
+      Rezonans magnetyczny pozostaje opcją do rozważenia.
+    </extraDescription>
   </element>
   <element id="17">
     <description>Rzucawka
@@ -163,7 +167,7 @@
     </description>
     <successors>
     </successors>
-    <image></image>
+    <image>alg_3</image>
     <extraDescription>W przypadku rzucawki podaje się siarczan magnezu [...]</extraDescription>
   </element>
   <element id="18">

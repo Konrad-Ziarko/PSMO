@@ -20,10 +20,6 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
 
     private Intent fromAct1;
     private int liczba;
-    ImageView imageView;
-    Matrix matrix = new Matrix();
-    Float scale = 1f;
-    ScaleGestureDetector SGD;
     private Button jButton1;
     private String algType;
 
@@ -31,11 +27,9 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
-        //setContentView(R.layout.activity_secondary_activity);
         Bundle p = getIntent().getExtras();
         liczba = p.getInt("key", -1);
         algType = p.getString("algType");
-        //liczba = fromAct1.getIntExtra("key", -1);
         jButton1=(Button) findViewById(R.id.button);
         jButton1.setOnClickListener(this);
 
@@ -44,7 +38,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
 
             InputStream is = getAssets().open("file.xml");
             list = new XmlParser().parse(is);
-            Toast.makeText(this,list.get(0).getDescription(),Toast.LENGTH_LONG).show();
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (XmlPullParserException e) {
@@ -58,7 +52,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
         super.onResume();
         fromAct1= getIntent();
         liczba= fromAct1.getIntExtra("key", -1);
-        Toast.makeText(this,""+liczba,Toast.LENGTH_SHORT).show();
+
 
     }
 

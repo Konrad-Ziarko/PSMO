@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.gesture.Gesture;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -37,6 +38,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
     private String extrainfo="";
     private String move="";
     private String message="";
+    private int image=-1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -52,6 +54,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
         message = bundle.getString("opis");
         move=bundle.getString("krok");
         positionID=bundle.getInt("position");
+        image=bundle.getInt("image");
         count_successors=bundle.getInt("count_successors");
         infobutton.setVisibility(extrainfo==""?View.INVISIBLE:View.VISIBLE);
         textView2.setText(move==""?"to końcowy krok":"\n"+move);
@@ -84,6 +87,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
             InfoDialog InfoDialog = new InfoDialog(getContext());
             InfoDialog.setTitle("Dodatkowe Informacje");
             InfoDialog.setMessage(extrainfo);
+            InfoDialog.setImage(image);
             InfoDialog.show();
         break;
 

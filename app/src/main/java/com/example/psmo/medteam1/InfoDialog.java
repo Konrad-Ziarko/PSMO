@@ -2,11 +2,13 @@ package com.example.psmo.medteam1;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class InfoDialog extends Dialog implements OnClickListener
@@ -16,6 +18,7 @@ public class InfoDialog extends Dialog implements OnClickListener
     private Context mContext;
     private TextView mTitle = null;
     private TextView mMessage = null;
+    private ImageView photo = null;
     private View v = null;
 
     public InfoDialog(Context context)
@@ -28,8 +31,11 @@ public class InfoDialog extends Dialog implements OnClickListener
             v.setBackgroundResource(android.R.color.transparent);
             mTitle = (TextView) findViewById(R.id.dialogTitle);
             mMessage = (TextView) findViewById(R.id.dialogMessage);
+            mMessage.setMovementMethod(new ScrollingMovementMethod());
             okButton = (Button) findViewById(R.id.OkButton);
             okButton.setOnClickListener(this);
+            photo=(ImageView)findViewById(R.id.fullimage);
+
         }
     @Override
     public void onClick(View v)
@@ -37,6 +43,14 @@ public class InfoDialog extends Dialog implements OnClickListener
             if (v == okButton)
                 dismiss();
         }
+
+    public void setImage(int d)
+    {
+
+        photo.setImageResource(d);
+
+    }
+
     @Override
     public void setTitle(CharSequence title)
         {
