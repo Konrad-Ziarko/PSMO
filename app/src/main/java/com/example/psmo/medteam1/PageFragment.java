@@ -1,26 +1,16 @@
 package com.example.psmo.medteam1;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
-import android.gesture.Gesture;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -64,7 +54,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
         try
         {
             AssetManager mngr = getContext().getAssets();
-            InputStream is = mngr.open("file.xml");
+            InputStream is = mngr.open("2.xml");
 
         } catch (IOException e)
             {

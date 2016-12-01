@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         jButton1=(Button) findViewById(R.id.button);
         jButton1.setOnClickListener(this);
         jButton2=(Button) findViewById(R.id.button2);
-       // jButton2.setOnClickListener(this);
+        jButton2.setOnClickListener(this);
         jButton3=(Button) findViewById(R.id.button3);
-       // jButton3.setOnClickListener(this);
+        jButton3.setOnClickListener(this);
     }
 
     private final String ginekologia = "Ginekologia";

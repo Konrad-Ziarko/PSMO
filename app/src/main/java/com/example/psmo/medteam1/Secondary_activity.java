@@ -1,14 +1,10 @@
 package com.example.psmo.medteam1;
 
 import android.content.Intent;
-import android.graphics.Matrix;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -36,7 +32,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
         List<AlgorithmElement> list = null;
         try {
 
-            InputStream is = getAssets().open("file.xml");
+            InputStream is = getAssets().open("2.xml");
             list = new XmlParser().parse(is);
 
         } catch (IOException e) {

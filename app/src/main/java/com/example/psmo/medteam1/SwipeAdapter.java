@@ -1,23 +1,16 @@
 package com.example.psmo.medteam1;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-
-import static java.security.AccessController.getContext;
 
 /**
  * Created by przem on 21.11.2016.
@@ -48,7 +41,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
 
         try
         {
-            is = c.getAssets().open("file.xml");
+            is = c.getAssets().open("2.xml");
         } catch (IOException e1)
             {
                 e1.printStackTrace();
@@ -97,7 +90,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         InputStream is = null;
         try
         {
-            is = c.getAssets().open("file.xml");
+            is = c.getAssets().open("2.xml");
         } catch (IOException e1)
             {
                 e1.printStackTrace();

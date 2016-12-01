@@ -1,18 +1,11 @@
 package com.example.psmo.medteam1;
 
-import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -44,7 +37,7 @@ public class Algorithm_activity extends FragmentActivity{
             String opis="";
             try
             {
-                is = this.getAssets().open("file.xml");
+                is = this.getAssets().open("2.xml");
             } catch (IOException e1)
                 {
                     e1.printStackTrace();
