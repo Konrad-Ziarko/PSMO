@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <algorithms>
+    <name>Ginekologia</name>
     <element id="1">
         <name>Niedokrwistość ciężarnych.</name>
         <file>1.xml</file>
