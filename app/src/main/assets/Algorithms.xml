@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<algorithms>
+    <element id="1">
+        <name>Niedokrwistość ciężarnych.</name>
+        <file>1.xml</file>
+        <image>diagram.png</image>
+    </element>
+    <element id="2">
+        <name>Nieprzytomna pacjentka z widoczną ciążą</name>
+        <file>2.xml</file>
+        <image>diagram2.png</image>
+    </element>
+    <element id="3">
+        <name>Ciężarna z zatrzymaniem krążenia</name>
+        <file>3.xml</file>
+        <image></image>
+    </element>
+</algorithms>
