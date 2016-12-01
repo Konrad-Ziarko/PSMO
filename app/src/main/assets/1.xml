@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<id attribute = "1">
+    <name>Niedokrwistość ciężarnych</name>
+    <steps>15</steps>
+    <meantime>15min</meantime>
+
+    <element id="1">
+        <description>Oceniaj objawy i czynniki ryzyka niedokrwistości przy każdej wizycie. Kontroluj morfinę przy co drugiej wizycie.</description>
+        <successors>
+            <child id ="2">Zmniejszone stężenie hemoglobiny</child>
+            <child id ="3">Prawidłowe stężenie hemoglobiny + czynniki ryzyka niedokrwistości lub objawy niedoboru żelaza</child>
+        </successors>
+        <image></image>
+        <extraDescription>Program wizyt oraz badań dodatkowych [...]</extraDescription>
+    </element>
+    <element id="2">
+        <description>Czy w morfologi występują makrocytoza, leukopenia, małopłytkowość?</description>
+        <successors>
+            <child id ="4"><![CDATA[Nie; Hb < 7 g/dl lub hematokryt < 27%]]></child>
+            <child id ="5">Nie; Hb 7-9 g/dl</child>
+            <child id ="6">Nie; Hb 9-11 g/dl</child>
+            <child id ="15">Tak</child>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="3">
+        <description>Oceń stężenie ferrytyny, rozważ kolejną morfologię.</description>
+        <successors>
+            <child id ="7">Ferrytyna ≤ 30µg/l</child>
+            <child id ="8"><![CDATA[Ferrytyna > 30µg/l + objawy]]></child>
+            <child id ="9"><![CDATA[Ferrytyna > 30µg/l + czynnik ryzyka]]></child>
+        </successors>
+        <image></image>
+        <extraDescription>Ferrytyna jest glikoproteiną wewnątrzkomórkową odpowiedzialną za [...]</extraDescription>
+    </element>
+    <element id="4">
+        <description>Hospitalizacja (diagnostyka i leczenie poza zakresem algorytmu).</description>
+        <successors>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="5">
+        <description>Rozważ konsultację internisty/hematologa; Rozpocznij podawanie żelaza.</description>
+        <successors>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="6">
+        <description>Rozpocznij podawanie żelaza.</description>
+        <successors>
+            <child id="10"></child>
+        </successors>
+        <image></image>
+        <extraDescription>Uciężarnych z rozpoznaną niedokrwistością dobowa doustna dawka żelaza [...]</extraDescription>
+    </element>
+    <element id="7">
+        <description>Rozpocznij podawanie żelaza.</description>
+        <successors>
+            <child id="11"></child>
+        </successors>
+        <image></image>
+        <extraDescription>Uciężarnych z rozpoznaną niedokrwistością dobowa doustna dawka żelaza [...]</extraDescription>
+    </element>
+    <element id="8">
+        <description>Przyczyną objawów nie jest niedobór żelaza.</description>
+        <successors>
+            <child id="15"></child>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="9">
+        <description>Dalsza obserwacja."</description>
+        <successors>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="10">
+        <description>Po 2 tygodniach kontrola morfologii z retikulocytozą."</description>
+        <successors>
+            <child id="12"></child>
+            <child id="13"></child>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="11">
+        <description>Kontrola morfologii krwi ferrytyny."</description>
+        <successors>
+        </successors>
+        <extra>
+            <image></image>
+            <description>Jeśli przyczyną włączenia żelaza jest niedobór [...]</description>
+        </extra>
+    </element>
+    <element id="12">
+        <description>Wzrost Hb o co najmniej 1 g/dl lub istotny wzrost retikulocytów."</description>
+        <successors>
+            <child id="14"></child>
+        </successors>
+        <image></image>
+        <extraDescription>W przypadku odpowiednio dobranego leczenia [...]</extraDescription>
+    </element>
+    <element id="13">
+        <description>Brak wzrostu Hb i $#60; 15‰ retikulocytów."</description>
+        <successors>
+            <child id="15"></child>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="14">
+        <description>Kontunuuj suplementację żelazem.</description>
+        <successors>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+    <element id="15">
+        <description>Skieruj do hematologa lub internisty.</description>
+        <successors>
+        </successors>
+        <image></image>
+        <extraDescription></extraDescription>
+    </element>
+</id>
