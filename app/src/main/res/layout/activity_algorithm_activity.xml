@@ -12,29 +12,36 @@
     <TextView
         android:id="@+id/label3"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.43"
+        android:layout_height="wrap_content"
         android:text="Obecny krok"
-        android:textSize="20dp"
+        android:textColor="#222200"
+        android:textSize="22dp"
         android:textStyle="bold"
+        android:paddingTop="5dp"
         android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/TextDescription"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_weight="1.38"
+        android:layout_weight="1.92"
         android:text="Obecny krok"
+        android:textColor="#283966"
+        android:textSize="16dp"
+        android:paddingTop="0dp"
+        android:layout_marginTop="5dp"
         android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/TextMove"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.41"
         android:text="Następny krok"
         android:textSize="20dp"
-        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:paddingTop="0dp"
+        android:background="#395193"
         android:textStyle="bold"
         android:textAlignment="center"
         />
@@ -44,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4.69"
-        android:background="@android:color/holo_blue_dark"
+        android:background="#FFFFFF"
         />
 
 </LinearLayout>
