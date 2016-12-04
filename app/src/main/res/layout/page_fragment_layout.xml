@@ -64,16 +64,6 @@
     <ImageButton
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/imageButton"
-        android:visibility="visible"
-        android:background="@drawable/arrow"
-        android:layout_marginStart="24dp"
-        android:layout_above="@+id/textView2"
-        android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
         android:id="@+id/info_button"
         android:visibility="invisible"
         android:background="@drawable/info"

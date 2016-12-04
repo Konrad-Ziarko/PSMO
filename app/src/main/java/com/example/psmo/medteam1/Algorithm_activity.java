@@ -13,18 +13,37 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-public class Algorithm_activity extends FragmentActivity{
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
+public class Algorithm_activity extends FragmentActivity {
     private ViewPager viewPager;
     private View v;
     private TextView description;
     private TextView labelnext;
+    FloatingActionButton fab;
     private int parentID=-1;
     private int count_moves=0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_algorithm_activity);
+        setContentView(R.layout.widget_layout);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "To kiedyś będzie wstecz", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         description=(TextView)findViewById(R.id.TextDescription);
         description.setMovementMethod(new ScrollingMovementMethod());
         labelnext=(TextView)findViewById(R.id.TextMove);
