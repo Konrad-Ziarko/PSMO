@@ -2,12 +2,14 @@ package com.example.psmo.medteam1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -31,25 +33,31 @@ public class ListaAlgorytmow extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(linearLayoutManager);
-        allAlgorithms = createList();
-        AlgorithmAdapter ca = new AlgorithmAdapter(allAlgorithms);
-        //AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
-        recList.setAdapter(ca);
-        recList.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener(){
-            @Override
-            public void onItemClick(View v, int position) {
-                //Toast.makeText(v.getContext(), "" + position, Toast.LENGTH_SHORT).show();
-                Intent myIntent = new Intent(ListaAlgorytmow.this, Secondary_activity.class);
-                //zapakowac do intenta info jaki algorytm
-                Bundle b = new Bundle();
-                b.putInt("key", allAlgorithms.get(position).getId());
-                b.putString("algType", algType);
-                b.putString("jakiPlikZXML", allAlgorithms.get(position).getFile());
-                b.putString("jakiPlikObrazem", allAlgorithms.get(position).getImage());
-                myIntent.putExtras(b);
-                ListaAlgorytmow.this.startActivity(myIntent);
-            }
-        }));
+        try {
+            allAlgorithms = createList();
+            AlgorithmAdapter ca = new AlgorithmAdapter(allAlgorithms);
+            //AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
+            recList.setAdapter(ca);
+            recList.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                @Override
+                public void onItemClick(View v, int position) {
+                    //Toast.makeText(v.getContext(), "" + position, Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(ListaAlgorytmow.this, Secondary_activity.class);
+                    //zapakowac do intenta info jaki algorytm
+                    Bundle b = new Bundle();
+                    b.putInt("key", allAlgorithms.get(position).getId());
+                    b.putString("algType", algType);
+                    b.putString("jakiPlikZXML", allAlgorithms.get(position).getFile());
+                    b.putString("jakiPlikObrazem", allAlgorithms.get(position).getImage());
+                    myIntent.putExtras(b);
+                    ListaAlgorytmow.this.startActivity(myIntent);
+                }
+            }));
+        }
+        catch (Exception e) {
+            Toast.makeText(this.getBaseContext(), "Pliki algorytmów nie istnieją", Toast.LENGTH_LONG).show();
+            super.onBackPressed();
+        }
     }
 
     @Override
