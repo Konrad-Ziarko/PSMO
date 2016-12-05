@@ -15,16 +15,20 @@ import java.util.List;
 public class Secondary_activity extends AppCompatActivity implements View.OnClickListener {
 
     private Intent fromAct1;
-    private int liczba;
+    private int nrAlgorytmu;
     private Button jButton1;
     private String algType;
+    private String jakiPlikZXML;
+    private String jakiPlikZObrazem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
         Bundle p = getIntent().getExtras();
-        liczba = p.getInt("key", -1);
+        nrAlgorytmu = p.getInt("key", -1);
+        jakiPlikZXML = p.getString("jakiPlikZXML");
+        jakiPlikZObrazem = p.getString("jakiPlikObrazem");
         algType = p.getString("algType");
         jButton1=(Button) findViewById(R.id.button);
         jButton1.setOnClickListener(this);
@@ -32,7 +36,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
         List<AlgorithmElement> list = null;
         try {
 
-            InputStream is = getAssets().open(liczba+".xml");
+            InputStream is = getAssets().open(jakiPlikZXML);
             list = new XmlParser().parse(is);
 
         } catch (IOException e) {
@@ -47,15 +51,13 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
     protected void onResume() {
         super.onResume();
         fromAct1= getIntent();
-        liczba= fromAct1.getIntExtra("key", -1);
-
-
+        nrAlgorytmu = fromAct1.getIntExtra("key", -1);
     }
 
     @Override
     public void onBackPressed()
     {
-        fromAct1.putExtra("param1",liczba);
+        fromAct1.putExtra("param1", nrAlgorytmu);
         setResult(RESULT_OK,fromAct1);
         //finish();
         super.onBackPressed();
@@ -63,10 +65,11 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-                Bundle bundle =new Bundle();
-                Intent go2Act2 = new Intent(Secondary_activity.this, Algorithm_activity.class);
-                go2Act2.putExtra("parentID",0);
-                startActivity(go2Act2);
+        Bundle bundle =new Bundle();
+        Intent go2Act2 = new Intent(Secondary_activity.this, Algorithm_activity.class);
+        //
+        go2Act2.putExtra("parentID", nrAlgorytmu);
+        startActivity(go2Act2);
 
     }
 }

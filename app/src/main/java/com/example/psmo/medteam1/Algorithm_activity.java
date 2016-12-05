@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.text.method.ScrollingMovementMethod;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -32,8 +33,7 @@ public class Algorithm_activity extends FragmentActivity{
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "To kiedyś będzie wstecz", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                onBackPressed();
             }
         });
         description=(TextView)findViewById(R.id.TextDescription);
@@ -46,6 +46,7 @@ public class Algorithm_activity extends FragmentActivity{
             InputStream is = null;
             List<AlgorithmElement> list = null;
             String opis="";
+            parentID=getIntent().getIntExtra("parentID",-1);
             try
             {
                 is = this.getAssets().open("2.xml");
@@ -57,7 +58,6 @@ public class Algorithm_activity extends FragmentActivity{
             try
             {
                 list = new XmlParser().parse(is);
-                parentID=getIntent().getIntExtra("parentID",-1);
                 opis = list.get(parentID).getDescription();
                 count_moves=list.get(parentID).getSuccessors().size();
                 description.setText(opis);

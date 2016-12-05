@@ -44,6 +44,8 @@ public class ListaAlgorytmow extends AppCompatActivity {
                 Bundle b = new Bundle();
                 b.putInt("key", allAlgorithms.get(position).getId());
                 b.putString("algType", algType);
+                b.putString("jakiPlikZXML", allAlgorithms.get(position).getFile());
+                b.putString("jakiPlikObrazem", allAlgorithms.get(position).getImage());
                 myIntent.putExtras(b);
                 ListaAlgorytmow.this.startActivity(myIntent);
             }
