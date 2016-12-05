@@ -1,6 +1,8 @@
 package com.example.psmo.medteam1;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.text.method.ScrollingMovementMethod;
@@ -13,22 +15,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
-public class Algorithm_activity extends FragmentActivity {
+public class Algorithm_activity extends FragmentActivity{
     private ViewPager viewPager;
     private View v;
+    FloatingActionButton fab;
     private TextView description;
     private TextView labelnext;
-    FloatingActionButton fab;
     private int parentID=-1;
     private int count_moves=0;
     @Override

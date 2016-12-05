@@ -10,9 +10,9 @@ import java.util.List;
 
 class AlgorithmAdapter extends RecyclerView.Adapter<AlgorithmAdapter.ContactViewHolder> {
 
-    private List<AlgorithmInfo> contactList;
+    private List<SingleAlgorithm> contactList;
 
-    AlgorithmAdapter(List<AlgorithmInfo> contactList) {
+    AlgorithmAdapter(List<SingleAlgorithm> contactList) {
         this.contactList = contactList;
     }
 
@@ -24,10 +24,8 @@ class AlgorithmAdapter extends RecyclerView.Adapter<AlgorithmAdapter.ContactView
 
     @Override
     public void onBindViewHolder(ContactViewHolder contactViewHolder, int i) {
-        AlgorithmInfo ci = contactList.get(i);
-        contactViewHolder.vName.setText(ci.name);
-        contactViewHolder.vSteps.setText(ci.steps);
-        contactViewHolder.vMeanTime.setText(ci.meanTime);
+        SingleAlgorithm ci = contactList.get(i);
+        contactViewHolder.vName.setText(ci.getName());
     }
 
     @Override
@@ -40,14 +38,10 @@ class AlgorithmAdapter extends RecyclerView.Adapter<AlgorithmAdapter.ContactView
     static class ContactViewHolder extends RecyclerView.ViewHolder {
 
         TextView vName;
-        TextView vSteps;
-        TextView vMeanTime;
 
         ContactViewHolder(View v) {
             super(v);
             vName =  (TextView) v.findViewById(R.id.txtName);
-            vSteps = (TextView)  v.findViewById(R.id.txtSteps);
-            vMeanTime = (TextView)  v.findViewById(R.id.txtTime);
         }
     }
 }

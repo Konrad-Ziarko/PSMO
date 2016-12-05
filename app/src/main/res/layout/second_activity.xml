@@ -9,6 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="#55E5F1FE"
     tools:context="com.example.psmo.medteam1.Secondary_activity"
     android:weightSum="10"
     >
@@ -24,7 +25,7 @@
 
     <Button
         android:text="Start algorytmu"
-        android:background="@drawable/buttonshape"
+        android:background="#549DFF"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/button"
@@ -35,6 +36,6 @@
         android:shadowDy="2"
         android:shadowRadius="2"
         android:layout_weight="1"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="0dp" />
 
 </LinearLayout>

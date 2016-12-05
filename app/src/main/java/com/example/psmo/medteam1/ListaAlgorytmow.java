@@ -9,13 +9,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaAlgorytmow extends AppCompatActivity {
 
     public String algType;
-
+    private List<SingleAlgorithm> allAlgorithms = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +31,9 @@ public class ListaAlgorytmow extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(linearLayoutManager);
+        allAlgorithms = createList();
+        AlgorithmAdapter ca = new AlgorithmAdapter(allAlgorithms);
         //AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
-        AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
         recList.setAdapter(ca);
         recList.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener(){
             @Override
@@ -37,7 +42,7 @@ public class ListaAlgorytmow extends AppCompatActivity {
                 Intent myIntent = new Intent(ListaAlgorytmow.this, Secondary_activity.class);
                 //zapakowac do intenta info jaki algorytm
                 Bundle b = new Bundle();
-                b.putInt("key", position);
+                b.putInt("key", allAlgorithms.get(position).getId());
                 b.putString("algType", algType);
                 myIntent.putExtras(b);
                 ListaAlgorytmow.this.startActivity(myIntent);
@@ -61,9 +66,31 @@ public class ListaAlgorytmow extends AppCompatActivity {
     }
 
 
-    private List<AlgorithmInfo> createList(int size) {
+    private List<SingleAlgorithm> createList() {
 
         //czytanie z xmla ile jest algorytmow
+        List<SingleAlgorithm> result= null;
+        AlgoritmListXmlParser parser = new AlgoritmListXmlParser(algType);
+        InputStream is = null;
+        try
+        {
+            is = this.getAssets().open(algType+".xml");
+        } catch (IOException e1)
+        {
+            e1.printStackTrace();
+        }
+
+        try
+        {
+            result = parser.parse(is);
+        } catch (XmlPullParserException e1)
+        {
+            e1.printStackTrace();
+        } catch (IOException e1)
+        {
+            e1.printStackTrace();
+        }
+        /*
         List<AlgorithmInfo> result = new ArrayList<>();
         for (int i=0; i < size; i++) {
             AlgorithmInfo algoritmInfo = new AlgorithmInfo();
@@ -73,7 +100,7 @@ public class ListaAlgorytmow extends AppCompatActivity {
 
             result.add(algoritmInfo);
 
-        }
+        }*/
 
         return result;
     }

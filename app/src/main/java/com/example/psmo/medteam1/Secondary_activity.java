@@ -32,7 +32,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
         List<AlgorithmElement> list = null;
         try {
 
-            InputStream is = getAssets().open("2.xml");
+            InputStream is = getAssets().open(liczba+".xml");
             list = new XmlParser().parse(is);
 
         } catch (IOException e) {

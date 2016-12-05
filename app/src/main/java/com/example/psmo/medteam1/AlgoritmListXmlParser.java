@@ -45,11 +45,10 @@ public class AlgoritmListXmlParser {
                 continue;
             }
             String algName = parser.getName();
-            if (name.equals("name")){
-                algName = readText(parser);
-                if (algName != algorithm)
-                    return elements;//jeśli to lista algorytmow o innej nazwie to zwroc pusta liste, nawet jak cos tam jest
-            }else if (name.equals("element")){
+            if (algName.equals("name")){
+                name = readText(parser);
+            }
+            else if (algName.equals("element")){
                 elements.add(readElement(parser));
             }else {
                 skip(parser);

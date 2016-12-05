@@ -5,4 +5,5 @@
     <string name="onkologia">Onkologia</string>
     <string name="pediatria">Pediatria</string>
     <string name="wybierz_kategorie">Wybierz kategorie</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
