@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<id attribute = "3">
+  <name>Ciężarna z atrzymaniem krążenia</name>
+  <steps>18</steps>
+  <meantime>15min</meantime>
+
+  <element id="1">
+    <description>
+      Oceń czy oddycha czy nie
+      Wezwij pomoc - wewnątrzszpitalny zespół reanimacyjny
+      Ułóż chorą na lewym boku (podłóż wałek pod prawe biodro) lub przesuń ciężarną macicę na lewo
+    </description>
+    <successors>
+      <child id ="2">Oddycha</child>
+      <child id ="3">Nie oddycha</child>
+    </successors>
+    <image></image>
+    <extraDescription>Podstawowe metody oceny są niezależne od wykształcenia [...]</extraDescription>
+  </element>
+
+  <element id="2">
+    <description>Poza zakresem algorytmu (nie wymaga resuscytacji)</description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="3">
+    <description>
+      Udrożnij drogi oddechowe
+      Wentylacja 100% tlenem
+    </description>
+    <successors>
+      <child id ="4"></child>
+    </successors>
+    <image></image>
+    <extraDescription>Sprawdzając drożność dróg oddechowych, upewnij się, że w jamie ustnej nie ma ciała obcego! [...]</extraDescription>
+  </element>
+  <element id="4">
+    <description>
+      Rozpocznij RKO (30/2)
+      100-120/min
+    </description>
+    <successors>
+      <child id="5"></child>
+    </successors>
+    <image></image>
+    <extraDescription>RKO (reanimacja krążeniowo-oddechowa) - masaż serca, 30 uciśnięć [...]</extraDescription>
+  </element>
+  <element id="5">
+    <description>
+      Podłącz defibrylator
+      Oceń rytm serca
+    </description>
+    <successors>
+      <child id="6"></child>
+      <child id="7"></child>
+    </successors>
+    <image></image>
+    <extraDescription>Czynność podłączania defibrylatora powinna zająć jak najmniej czasu, aby przerwa w masażu serca była jak najkrótsza.</extraDescription>
+  </element>
+  <element id="6">
+    <description>Rytm do defibrylacji (migotanie komór)</description>
+    <successors>
+      <child id="8"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="7">
+    <description>Rytm nie do defibrylacji (asystolia)</description>
+    <successors>
+      <child id="9"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="8">
+    <description>Defibrylacja maksymalną energią dostępną w defibrylatorze</description>
+    <successors>
+      <child id="10"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="9">
+    <description>
+      Prowadź RKO (30/2)
+      Oddech zastępczy, podawaj tlen
+      Zapewnij dostęp i.v.
+      Adrenalina 1 mg i.v. co 3-5 min
+      Zapewnij drożność dróg oddechowych
+      Sprawdzaj rytm serca za pomocą defibrylatora
+    </description>
+    <successors>
+      <child id="13"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="10">
+    <description>Oceń rytm serca po 2 min</description>
+    <successors>
+      <child id="11"></child>
+      <child id="12"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="11">
+    <description>Powrót podstawowego rytmu serca</description>
+    <successors>
+      <child id="14"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="12">
+    <description>Nadal migotanie komór</description>
+    <successors>
+      <child id="15"></child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="13">
+    <description>
+      * ciąża ≥20 tyg. - natychmiastowe cięcie cesarskie (zasada 4 min)
+      * <![CDATA[<20 tyg. - brak wskazań do cięcia cesarskiego]]>
+    </description>
+    <successors>
+      <child id="18"></child>
+    </successors>
+    <image></image>
+    <extraDescription>Kobiety w ciąży po zatrzymaniu krążenia można podzielić na [...]</extraDescription>
+  </element>
+  <element id="14">
+    <description>
+      Sprawdż oddech
+      Jeżeli nie oddycha - oddech zastępczy 12/min, intubacja
+    </description>
+    <successors>
+      <child id="16"></child>
+    </successors>
+    <image></image>
+    <extraDescription>Przed przybyciem zespołu reanimacyjnego - wentylacja workiem [...]</extraDescription>
+  </element>
+  <element id="15">
+    <description>
+      Prowadź RKO (30/2)
+      Oddech zastępczy, podawaj tlen
+      Zapewnij dostęp i.v.
+      Adrenalina 1 mg i.v. (gdy nieskuteczna, można powtarzać co 3 min)
+      Defibrylacja maksymalną energią (powtarzaj, jeśli nieskuteczna)
+    </description>
+    <successors>
+      <child id="13"></child>
+    </successors>
+    <image></image>
+    <extraDescription>Przed przybyciem zespołu reanimacyjnego - wentylacja workiem [...]</extraDescription>
+  </element>
+  <element id="16">
+    <description>Oceń bezzwłocznie stan ciąży (USG, przepływy)</description>
+    <successors>
+      <child id="17">Wynik prawidłowy</child>
+      <child id="13">Wynik nieprawidłowy lub brak możliwości wykonania badania</child>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="17">
+    <description>
+      Intensywny nadzór położniczy
+      Konsultacja kardiologa
+    </description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+  <element id="18">
+    <description>Przekaż chorą zespołowi reanimacyjnemu</description>
+    <successors>
+    </successors>
+    <image></image>
+    <extraDescription></extraDescription>
+  </element>
+</id>
