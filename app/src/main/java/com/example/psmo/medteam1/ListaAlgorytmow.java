@@ -36,14 +36,11 @@ public class ListaAlgorytmow extends AppCompatActivity {
         try {
             allAlgorithms = createList();
             AlgorithmAdapter ca = new AlgorithmAdapter(allAlgorithms);
-            //AlgorithmAdapter ca = new AlgorithmAdapter(createList(30));
             recList.setAdapter(ca);
             recList.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                 @Override
                 public void onItemClick(View v, int position) {
-                    //Toast.makeText(v.getContext(), "" + position, Toast.LENGTH_SHORT).show();
                     Intent myIntent = new Intent(ListaAlgorytmow.this, Secondary_activity.class);
-                    //zapakowac do intenta info jaki algorytm
                     Bundle b = new Bundle();
                     b.putInt("key", allAlgorithms.get(position).getId());
                     b.putString("algType", algType);
@@ -78,7 +75,6 @@ public class ListaAlgorytmow extends AppCompatActivity {
 
     private List<SingleAlgorithm> createList() {
 
-        //czytanie z xmla ile jest algorytmow
         List<SingleAlgorithm> result= null;
         AlgoritmListXmlParser parser = new AlgoritmListXmlParser(algType);
         InputStream is = null;
@@ -100,17 +96,6 @@ public class ListaAlgorytmow extends AppCompatActivity {
         {
             e1.printStackTrace();
         }
-        /*
-        List<AlgorithmInfo> result = new ArrayList<>();
-        for (int i=0; i < size; i++) {
-            AlgorithmInfo algoritmInfo = new AlgorithmInfo();
-            algoritmInfo.name = algType + " " + Info.NAME_PREFIX + i;
-            algoritmInfo.steps = Info.STEPS_PREFIX + i;
-            algoritmInfo.meanTime = Info.TIME_PREFIX + i + "[min|h]";
-
-            result.add(algoritmInfo);
-
-        }*/
 
         return result;
     }

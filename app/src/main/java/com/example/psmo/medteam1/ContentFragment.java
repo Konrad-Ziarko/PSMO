@@ -31,7 +31,6 @@ public class ContentFragment extends Fragment{
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //parsowanie XML do widoku
 
         image=(TouchImageView) getActivity().findViewById(R.id.img);
         String img = getActivity().getIntent().getStringExtra("jakiPlikObrazem");

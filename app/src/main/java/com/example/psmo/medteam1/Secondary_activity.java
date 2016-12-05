@@ -59,7 +59,6 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
     {
         fromAct1.putExtra("param1", nrAlgorytmu);
         setResult(RESULT_OK,fromAct1);
-        //finish();
         super.onBackPressed();
     }
 
@@ -67,24 +66,11 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         Bundle bundle =new Bundle();
         Intent go2Act2 = new Intent(Secondary_activity.this, Algorithm_activity.class);
-        //
         nrAlgorytmu = 0;
         bundle.putString("jakiPlikZXML", jakiPlikZXML);
         bundle.putInt("parentID", nrAlgorytmu);
         go2Act2.putExtras(bundle);
         startActivity(go2Act2);
-        //go2Act2.putExtra("parentID", nrAlgorytmu);
-        //startActivity(go2Act2);
 
-
-
-
-        /*undle b = new Bundle();
-        b.putInt("key", allAlgorithms.get(position).getId());
-        b.putString("algType", algType);
-        b.putString("jakiPlikZXML", allAlgorithms.get(position).getFile());
-        b.putString("jakiPlikObrazem", allAlgorithms.get(position).getImage());
-        myIntent.putExtras(b);
-        ListaAlgorytmow.this.startActivity(myIntent);*/
     }
 }
