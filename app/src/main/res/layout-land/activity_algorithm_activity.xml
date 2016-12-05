@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_algorithm_activity"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.psmo.medteam1.Algorithm_activity"
+    android:weightSum="5"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Obecny krok"
+            android:textColor="#FFFFFF"
+            android:background="#02B375"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingTop="5dp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/TextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1.92"
+            android:text="Obecny krok"
+            android:background="#D8F3EB"
+            android:textColor="#273238"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="0dp"
+            android:layout_marginTop="0dp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/TextMove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Następny krok"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            android:paddingTop="5dp"
+            android:background="#02B375"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
