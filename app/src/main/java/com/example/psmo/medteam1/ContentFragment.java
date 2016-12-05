@@ -1,6 +1,7 @@
 package com.example.psmo.medteam1;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +34,9 @@ public class ContentFragment extends Fragment{
         //parsowanie XML do widoku
 
         image=(TouchImageView) getActivity().findViewById(R.id.img);
-        image.setimage(R.drawable.diagram2);
+        String img = getActivity().getIntent().getStringExtra("jakiPlikObrazem");
+        int res = getResources().getIdentifier(img, "drawable", getActivity().getPackageName());
+        image.setimage(res);
         View contentFrame = getActivity().findViewById(R.id.content);
         inLandMode = contentFrame != null && contentFrame.getVisibility() == View.VISIBLE;
 
