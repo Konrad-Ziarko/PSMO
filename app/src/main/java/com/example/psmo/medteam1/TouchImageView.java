@@ -185,6 +185,12 @@ public class TouchImageView extends ImageView {
         return delta;
     }
 
+    void setimage (int res)
+    {
+        TouchImageView image = (TouchImageView) findViewById(R.id.img);
+        image.setImageResource(res);
+    }
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);

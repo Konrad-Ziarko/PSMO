@@ -23,6 +23,7 @@ public class Algorithm_activity extends FragmentActivity{
     private TextView description;
     private TextView labelnext;
     private int parentID=-1;
+    private String xmlfile;
     private int count_moves=0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,7 +50,9 @@ public class Algorithm_activity extends FragmentActivity{
             parentID=getIntent().getIntExtra("parentID",-1);
             try
             {
-                is = this.getAssets().open("2.xml");
+                //is = this.getAssets().open("2.xml");
+                xmlfile = getIntent().getStringExtra("jakiPlikZXML");
+                is = this.getAssets().open(xmlfile);
             } catch (IOException e1)
                 {
                     e1.printStackTrace();
@@ -72,7 +75,7 @@ public class Algorithm_activity extends FragmentActivity{
         }
         labelnext.setText(count_moves==0 ? "Koniec algorytmu...":"Następny Krok");
 
-        SwipeAdapter swipe=new SwipeAdapter(getSupportFragmentManager(), getBaseContext(),parentID);
+        SwipeAdapter swipe=new SwipeAdapter(getSupportFragmentManager(), getBaseContext(),parentID, xmlfile);
         viewPager.setAdapter(swipe);
     }
 }

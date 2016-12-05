@@ -18,15 +18,17 @@ import java.util.List;
 
 public class SwipeAdapter extends FragmentStatePagerAdapter {
     private int parentID;
+    private String xmlfile;
     private Context c;
     private int nextelement;
     private int count_successors;
     private int image;
-    public SwipeAdapter(FragmentManager fm, Context c,int parentID)
+    public SwipeAdapter(FragmentManager fm, Context c,int parentID, String xmlfile)
     {
         super(fm);
         this.c = c;
         this.parentID=parentID;
+        this.xmlfile = xmlfile;
     }
 
     @Override
@@ -41,7 +43,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
 
         try
         {
-            is = c.getAssets().open("2.xml");
+            is = c.getAssets().open(xmlfile);
         } catch (IOException e1)
             {
                 e1.printStackTrace();
@@ -72,6 +74,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         bundle.putString("krok",krok);
         bundle.putString("extrainfo",extrainfo);
         bundle.putInt("image",image);
+        bundle.putString("xml", xmlfile);
         fragment.setArguments(bundle);
 
         return fragment;
@@ -90,7 +93,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         InputStream is = null;
         try
         {
-            is = c.getAssets().open("2.xml");
+            is = c.getAssets().open(xmlfile);
         } catch (IOException e1)
             {
                 e1.printStackTrace();

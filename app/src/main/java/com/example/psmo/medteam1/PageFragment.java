@@ -28,6 +28,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
     private String extrainfo="";
     private String move="";
     private String message="";
+    private String xmlfile;
     private int image=-1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -46,6 +47,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
         positionID=bundle.getInt("position");
         image=bundle.getInt("image");
         count_successors=bundle.getInt("count_successors");
+        xmlfile = bundle.getString("xml");
         infobutton.setVisibility(extrainfo==""?View.INVISIBLE:View.VISIBLE);
         textView2.setText(move==""?"to końcowy krok":"\n"+move);
         textView.setText(message=="" ? (count_successors==1 ? "Bezwarunkowo przejdź do kolejnego kroku" : "Opisany w kroku" ) : message);
@@ -54,7 +56,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
         try
         {
             AssetManager mngr = getContext().getAssets();
-            InputStream is = mngr.open("2.xml");
+            InputStream is = mngr.open(xmlfile);
 
         } catch (IOException e)
             {
@@ -84,6 +86,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
         default:
             Intent go2Act4 = new Intent(v.getContext(), Algorithm_activity.class);
             go2Act4.putExtra("parentID",positionID);
+            go2Act4.putExtra("jakiPlikZXML",xmlfile);
             startActivity(go2Act4);
         break;
         }

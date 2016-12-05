@@ -11,6 +11,7 @@ public class ContentFragment extends Fragment{
     boolean inLandMode;
     int currentDiagram = 0;
     int currentDiagramPosition=0;
+    TouchImageView image;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,6 +32,8 @@ public class ContentFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         //parsowanie XML do widoku
 
+        image=(TouchImageView) getActivity().findViewById(R.id.img);
+        image.setimage(R.drawable.diagram2);
         View contentFrame = getActivity().findViewById(R.id.content);
         inLandMode = contentFrame != null && contentFrame.getVisibility() == View.VISIBLE;
 
