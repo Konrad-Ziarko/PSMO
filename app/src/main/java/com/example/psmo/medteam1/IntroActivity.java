@@ -23,7 +23,7 @@ public class IntroActivity extends AppIntro {
         addSlide(AppIntroFragment.newInstance("Start", "Naciśnij dziedzinę która cię interesuje.",
                 R.drawable.wybdzial, Color.parseColor("#1976D2")));
         addSlide(AppIntroFragment.newInstance("Start", "Wybierz algorytm który chciałbyć przejść.",
-                R.drawable.wybdzial, Color.parseColor("#1976D2")));
+                R.drawable.wybalgo, Color.parseColor("#1976D2")));
         addSlide(AppIntroFragment.newInstance("Start", "Rozpocznij pracę z algorymtmem wybierając przycisk",
                 R.drawable.startalg, Color.parseColor("#1976D2")));
         addSlide(AppIntroFragment.newInstance("Nawigacja", "Przeuwaj w lewo lub prawo we wskazanych miejscach, aby zmienić wybór.",
