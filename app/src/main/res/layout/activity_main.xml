@@ -33,7 +33,7 @@
 
         <Button
             android:text="@string/pediatria"
-            android:background="#FA634E"
+            android:background="#FFFF8B2B"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button2"
