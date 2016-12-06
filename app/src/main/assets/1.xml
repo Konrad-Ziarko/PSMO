@@ -92,10 +92,8 @@
         <description>Kontrola morfologii krwi ferrytyny."</description>
         <successors>
         </successors>
-        <extra>
-            <image></image>
-            <description>Jeśli przyczyną włączenia żelaza jest niedobór [...]</description>
-        </extra>
+        <image></image>
+        <extraDescription>Jeśli przyczyną włączenia żelaza jest niedobór [...]</extraDescription>
     </element>
     <element id="12">
         <description>Wzrost Hb o co najmniej 1 g/dl lub istotny wzrost retikulocytów."</description>
