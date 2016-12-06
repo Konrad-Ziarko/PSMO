@@ -1,6 +1,9 @@
 package com.example.psmo.medteam1;
 
+import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +37,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         jButton2.setOnClickListener(this);
         jButton3=(Button) findViewById(R.id.button3);
         jButton3.setOnClickListener(this);
+
+        final String PREFS_NAME = "MyPrefsFile";
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        //potem wywalić true...
+        if (true || settings.getBoolean("first_launch", true)) {
+            startActivity(new Intent(MainActivity.this, IntroActivity.class));
+            settings.edit().putBoolean("first_launch", false).apply();
+        }
+
     }
 
     private final String ginekologia = "Ginekologia";
