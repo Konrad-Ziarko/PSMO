@@ -14,21 +14,22 @@ public class IntroActivity extends AppIntro {
         super.onCreate(savedInstanceState);
 
         // Note here that we DO NOT use setContentView();
+        int backGround = Color.parseColor("#ffa75e");
 
         // Add your slide fragments here.
         // AppIntro will automatically generate the dots indicator and buttons.
         addSlide(AppIntroFragment.newInstance("Start", "Naciśnij dziedzinę która cię interesuje.",
-                R.drawable.wybdzial, Color.parseColor("#1976D2")));
+                R.drawable.wybdzial, backGround));
         addSlide(AppIntroFragment.newInstance("Start", "Wybierz algorytm który chciałbyć przejść.",
-                R.drawable.wybalgorytm, Color.parseColor("#1976D2")));
+                R.drawable.wybalgorytm, backGround));
         addSlide(AppIntroFragment.newInstance("Start", "Rozpocznij pracę z algorymtmem wybierając przycisk",
-                R.drawable.startalgorytmu, Color.parseColor("#1976D2")));
-        addSlide(AppIntroFragment.newInstance("Nawigacja", "Przesuwaj w lewo lub prawo we wskazanych miejscach, aby zmienić wybór.",
-                R.drawable.przesuwanie, Color.parseColor("#1976D2")));
+                R.drawable.startalgorytmu, backGround));
+        addSlide(AppIntroFragment.newInstance("Nawigacja", "Przeuwaj w lewo lub prawo we wskazanych miejscach, aby zmienić wybór.",
+                R.drawable.przesuwanie, backGround));
         addSlide(AppIntroFragment.newInstance("Praca", "Niektóre kroki pozwalają na uzyskanie dodatkowych informacji.",
-                R.drawable.dodatkowe, Color.parseColor("#1976D2")));
+                R.drawable.dodatkowe, backGround));
         addSlide(AppIntroFragment.newInstance("Praca", "Zatwiedź wybór klikając w zakreślony obszar lub wykorzystaj przycisk aby wykonać krok wstecz.",
-                R.drawable.praca, Color.parseColor("#1976D2")));
+                R.drawable.praca, backGround));
 
         // Instead of fragments, you can also use our default slide
         // Just set a title, description, background and image. AppIntro will do the rest.
@@ -36,8 +37,8 @@ public class IntroActivity extends AppIntro {
 
         // OPTIONAL METHODS
         // Override bar/separator color.
-        setBarColor(Color.parseColor("#3F51B5"));
-        setSeparatorColor(Color.parseColor("#2196F3"));
+        setBarColor(Color.parseColor("#FFC46B20"));
+        setSeparatorColor(Color.parseColor("#ffa75e"));
         setFadeAnimation();
         // Hide Skip/Done button.
         showSkipButton(true);
