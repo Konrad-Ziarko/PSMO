@@ -1,5 +1,7 @@
 package com.example.psmo.medteam1;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +11,7 @@ import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 
-public class IntroActivity extends AppIntro2 {
+public class IntroActivity extends AppIntro {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,34 +33,31 @@ public class IntroActivity extends AppIntro2 {
 
         // OPTIONAL METHODS
         // Override bar/separator color.
-        //setBarColor(Color.parseColor("#3F51B5"));
-        //setSeparatorColor(Color.parseColor("#2196F3"));
-
+        setBarColor(Color.parseColor("#3F51B5"));
+        setSeparatorColor(Color.parseColor("#2196F3"));
+        setFadeAnimation();
         // Hide Skip/Done button.
         showSkipButton(true);
         setProgressButtonEnabled(true);
-
-        // Turn vibration on and set intensity.
-        // NOTE: you will probably need to ask VIBRATE permission in Manifest.
-        setVibrate(true);
-        setVibrateIntensity(30);
     }
 
     @Override
     public void onSkipPressed(Fragment currentFragment) {
-        super.onSkipPressed(currentFragment);
-        // Do something when users tap on Skip button.
+        finish();
+        // /super.onSkipPressed(currentFragment);
     }
 
     @Override
     public void onDonePressed(Fragment currentFragment) {
-        super.onDonePressed(currentFragment);
+        finish();
+        //super.onDonePressed(currentFragment);
         // Do something when users tap on Done button.
     }
 
     @Override
     public void onSlideChanged(@Nullable Fragment oldFragment, @Nullable Fragment newFragment) {
-        super.onSlideChanged(oldFragment, newFragment);
+        //super.onSlideChanged(oldFragment, newFragment);
         // Do something when the slide changes.
     }
+
 }

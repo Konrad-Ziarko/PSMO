@@ -37,16 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         jButton2.setOnClickListener(this);
         jButton3=(Button) findViewById(R.id.button3);
         jButton3.setOnClickListener(this);
-
         final String PREFS_NAME = "MyPrefsFile";
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         //potem wywalić true...
         if (true || settings.getBoolean("first_launch", true)) {
-            startActivity(new Intent(MainActivity.this, IntroActivity.class));
+            startActivity(new Intent(this, IntroActivity.class));
             settings.edit().putBoolean("first_launch", false).apply();
         }
-
     }
 
     private final String ginekologia = "Ginekologia";
