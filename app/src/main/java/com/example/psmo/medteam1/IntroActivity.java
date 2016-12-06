@@ -20,12 +20,12 @@ public class IntroActivity extends AppIntro {
 
         // Add your slide fragments here.
         // AppIntro will automatically generate the dots indicator and buttons.
-        addSlide(AppIntroFragment.newInstance("Nawigacja", "Aby poruszać się po algorytmach wykorzystaj...",
-                R.drawable.ic_done_white, Color.parseColor("#1976D2")));
-        addSlide(AppIntroFragment.newInstance("Praca", "W trakcie pracy z algorytmem możesz...",
-                R.drawable.ic_done_white, Color.parseColor("#1976D2")));
-        addSlide(AppIntroFragment.newInstance("Zakończenie algorytmu", "Po zakończeniu algorytmu...",
-                R.drawable.ic_done_white, Color.parseColor("#1976D2")));
+        addSlide(AppIntroFragment.newInstance("Nawigacja", "Przeuwaj w lewo lub prawo we wskazanych miejscach, aby zmienić wybór.",
+                R.drawable.przesuwanie, Color.parseColor("#1976D2")));
+        addSlide(AppIntroFragment.newInstance("Praca", "Niektóre kroki pozwalają na uzyskanie dodatkowych informacji.",
+                R.drawable.dodatkowe, Color.parseColor("#1976D2")));
+        addSlide(AppIntroFragment.newInstance("Praca", "Zatwiedź wybór klikając w zakreślony obszar lub wykorzystaj przycisk aby wykonać krok wstecz.",
+                R.drawable.praca, Color.parseColor("#1976D2")));
 
         // Instead of fragments, you can also use our default slide
         // Just set a title, description, background and image. AppIntro will do the rest.
