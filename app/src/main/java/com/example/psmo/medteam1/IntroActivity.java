@@ -24,7 +24,7 @@ public class IntroActivity extends AppIntro {
                 R.drawable.wybalgorytm, backGround));
         addSlide(AppIntroFragment.newInstance("Start", "Rozpocznij pracę z algorymtmem wybierając przycisk",
                 R.drawable.startalgorytmu, backGround));
-        addSlide(AppIntroFragment.newInstance("Nawigacja", "Przeuwaj w lewo lub prawo we wskazanych miejscach, aby zmienić wybór.",
+        addSlide(AppIntroFragment.newInstance("Nawigacja", "Przesuwaj w lewo lub prawo we wskazanych miejscach, aby zmienić wybór.",
                 R.drawable.przesuwanie, backGround));
         addSlide(AppIntroFragment.newInstance("Praca", "Niektóre kroki pozwalają na uzyskanie dodatkowych informacji.",
                 R.drawable.dodatkowe, backGround));
