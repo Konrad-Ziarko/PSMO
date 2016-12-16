@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         //potem wywalić true...
-        if (true || settings.getBoolean("first_launch", true)) {
+        if (settings.getBoolean("first_launch", true)) {
             startActivity(new Intent(this, IntroActivity.class));
             settings.edit().putBoolean("first_launch", false).apply();
         }
