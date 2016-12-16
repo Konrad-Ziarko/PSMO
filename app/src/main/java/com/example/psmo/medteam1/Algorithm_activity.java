@@ -9,7 +9,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-
+import android.content.Intent;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
@@ -20,6 +20,7 @@ public class Algorithm_activity extends FragmentActivity{
     private ViewPager viewPager;
     private View v;
     FloatingActionButton fab;
+    FloatingActionButton fab2;
     private TextView description;
     private TextView labelnext;
     private int parentID=-1;
@@ -31,10 +32,20 @@ public class Algorithm_activity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.widget_layout);
         fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //onBackPressed();
+                Intent intentMain = new Intent(Algorithm_activity.this ,
+                        ViewAlgorithm.class);
+                Algorithm_activity.this.startActivity(intentMain);
             }
         });
         description=(TextView)findViewById(R.id.TextDescription);
@@ -74,9 +85,29 @@ public class Algorithm_activity extends FragmentActivity{
 
         }
         labelnext.setText(count_moves==0 ? "Koniec algorytmu...":"Następny Krok");
+        if(count_moves==0){
+            labelnext.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(view.getContext(), MainActivity.class);
+                    startActivityForResult(myIntent,0);
+                    //xfinish();
+                }
+            });
+        }
+        if(xmlfile!=null) {
+            SwipeAdapter swipe = new SwipeAdapter(getSupportFragmentManager(), getBaseContext(), parentID, xmlfile);
+            viewPager.setAdapter(swipe);
+        }
+    }
 
-        SwipeAdapter swipe=new SwipeAdapter(getSupportFragmentManager(), getBaseContext(),parentID, xmlfile);
-        viewPager.setAdapter(swipe);
+    public void onClick(View v) {
+        switch(v.getId())
+        {
+            default:
+                break;
+        }
+
     }
 }
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <com.example.psmo.medteam1.TouchImageView
+        android:id="@+id/img"
+        android:scaleType="matrix"
+        android:src="@drawable/diagram"
+        android:layout_width="wrap_content"
+        android:layout_height="451dp"
+        android:layout_weight="1.00" />
+
+    <Button
+        android:text="OK"
+        android:background="#549DFF"
+        android:textColor="#FFFFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:textSize="25sp" />
+
+</LinearLayout>

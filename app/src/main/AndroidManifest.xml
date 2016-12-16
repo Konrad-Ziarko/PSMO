@@ -16,13 +16,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Secondary_activity" />
-        <activity android:name=".Algorithm_activity"></activity>
+        <activity android:name=".Algorithm_activity">
+        </activity>
         <activity android:name="com.example.psmo.medteam1.ListaAlgorytmow"/>
         <activity android:name="com.example.psmo.medteam1.IntroActivity">
-
-
         </activity>
-
+        <activity android:name="com.example.psmo.medteam1.ViewAlgorithm"/>
     </application>
 
 </manifest>

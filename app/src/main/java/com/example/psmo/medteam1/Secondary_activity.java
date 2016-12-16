@@ -3,8 +3,11 @@ package com.example.psmo.medteam1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -20,6 +23,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
     private String algType;
     private String jakiPlikZXML;
     private String jakiPlikZObrazem;
+    private String algName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
         jakiPlikZXML = p.getString("jakiPlikZXML");
         jakiPlikZObrazem = p.getString("jakiPlikObrazem");
         algType = p.getString("algType");
+        algName = p.getString("algName");
         jButton1=(Button) findViewById(R.id.button);
         jButton1.setOnClickListener(this);
 
@@ -45,6 +50,7 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
             e.printStackTrace();
         }
 
+        this.setTitle(algName);
     }
 
     @Override

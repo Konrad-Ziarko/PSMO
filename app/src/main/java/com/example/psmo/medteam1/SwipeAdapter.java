@@ -75,6 +75,14 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         bundle.putString("extrainfo",extrainfo);
         bundle.putInt("image",image);
         bundle.putString("xml", xmlfile);
+        String prev="";
+        String next="";
+        if(position+1<count_successors)
+            next="1";
+        if(position!=0)
+            prev="1";
+        bundle.putString("prev",prev);
+        bundle.putString("next",next);
         fragment.setArguments(bundle);
 
         return fragment;
