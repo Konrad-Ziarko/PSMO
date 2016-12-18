@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -66,6 +68,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         go2Act2.putExtras(b);
         startActivity(go2Act2);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        /*if (id == R.id.action_settings) {
+            return true;
+        }*/
+        if (id == R.id.tutorial) {
+            startActivity(new Intent(this, IntroActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

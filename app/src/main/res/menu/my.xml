@@ -4,8 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MyActivity" >
 
-    <item android:id="@+id/action_settings"
+    <!--<item android:id="@+id/action_settings"
         android:title="menu"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource" />-->
+
+    <item android:id="@+id/tutorial"
+        android:title="Pomoc"
         android:orderInCategory="100"
         android:showAsAction="never"
         tools:ignore="AppCompatResource" />
