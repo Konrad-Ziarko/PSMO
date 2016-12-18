@@ -56,6 +56,7 @@ public class ListaAlgorytmow extends AppCompatActivity {
             Toast.makeText(this.getBaseContext(), "Pliki algorytmów nie istnieją", Toast.LENGTH_LONG).show();
             super.onBackPressed();
         }
+        this.setTitle(algType);
     }
 
     @Override
