@@ -1,12 +1,19 @@
 package com.example.psmo.medteam1;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
@@ -16,7 +23,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-public class Algorithm_activity extends FragmentActivity{
+public class Algorithm_activity extends AppCompatActivity{
     private ViewPager viewPager;
     private View v;
     FloatingActionButton fab;
@@ -45,6 +52,9 @@ public class Algorithm_activity extends FragmentActivity{
                 //onBackPressed();
                 Intent intentMain = new Intent(Algorithm_activity.this ,
                         ViewAlgorithm.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("algName", getIntent().getStringExtra("algName"));
+                intentMain.putExtras(bundle);
                 Algorithm_activity.this.startActivity(intentMain);
             }
         });
@@ -96,9 +106,13 @@ public class Algorithm_activity extends FragmentActivity{
             });
         }
         if(xmlfile!=null) {
-            SwipeAdapter swipe = new SwipeAdapter(getSupportFragmentManager(), getBaseContext(), parentID, xmlfile);
+            SwipeAdapter swipe = new SwipeAdapter(getSupportFragmentManager(), getBaseContext(), parentID, xmlfile, getIntent().getStringExtra("algName"));
             viewPager.setAdapter(swipe);
         }
+        this.setTitle(getIntent().getStringExtra("algName"));
+        //Zmiana koloru Actionbar
+        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#02B375")));
+
     }
 
     public void onClick(View v) {
@@ -108,6 +122,24 @@ public class Algorithm_activity extends FragmentActivity{
                 break;
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        /*if (id == R.id.action_settings) {
+            return true;
+        }*/
+        if (id == R.id.tutorial) {
+            startActivity(new Intent(this, IntroActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

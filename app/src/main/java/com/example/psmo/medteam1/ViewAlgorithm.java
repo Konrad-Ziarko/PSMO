@@ -24,5 +24,6 @@ public class ViewAlgorithm extends Algorithm_activity {
             }
 
         });
+        this.setTitle(getIntent().getStringExtra("algName"));
     }
 }

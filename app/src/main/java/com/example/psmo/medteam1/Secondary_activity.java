@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -75,8 +77,27 @@ public class Secondary_activity extends AppCompatActivity implements View.OnClic
         nrAlgorytmu = 0;
         bundle.putString("jakiPlikZXML", jakiPlikZXML);
         bundle.putInt("parentID", nrAlgorytmu);
+        bundle.putString("algName", algName);
         go2Act2.putExtras(bundle);
         startActivity(go2Act2);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        /*if (id == R.id.action_settings) {
+            return true;
+        }*/
+        if (id == R.id.tutorial) {
+            startActivity(new Intent(this, IntroActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

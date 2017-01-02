@@ -43,8 +43,10 @@ public class IntroActivity extends AppIntro {
         // Hide Skip/Done button.
         showSkipButton(true);
         setProgressButtonEnabled(true);
+        //Set Skip/Done button text
         setSkipText("Pomiń");
         setDoneText("OK");
+        //set Title text on Titlebar
         this.setTitle("Pomoc");
     }
 

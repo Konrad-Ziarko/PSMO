@@ -33,6 +33,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
     private String move="";
     private String message="";
     private String xmlfile;
+    private String algName;
     private String next;
     private String prev;
     private int image=-1;
@@ -55,6 +56,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
         image=bundle.getInt("image");
         count_successors=bundle.getInt("count_successors");
         xmlfile = bundle.getString("xml");
+        algName = bundle.getString("algName");
         next = bundle.getString("next");
         prev = bundle.getString("prev");
         infobutton.setVisibility(extrainfo==""?View.INVISIBLE:View.VISIBLE);
@@ -98,6 +100,7 @@ public class PageFragment extends Fragment implements View.OnClickListener {
             Intent go2Act4 = new Intent(v.getContext(), Algorithm_activity.class);
             go2Act4.putExtra("parentID",positionID);
             go2Act4.putExtra("jakiPlikZXML",xmlfile);
+            go2Act4.putExtra("algName", algName);
             startActivity(go2Act4);
         break;
         }

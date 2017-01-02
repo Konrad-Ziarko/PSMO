@@ -73,14 +73,14 @@
         <extraDescription></extraDescription>
     </element>
     <element id="9">
-        <description>Dalsza obserwacja."</description>
+        <description>Dalsza obserwacja.</description>
         <successors>
         </successors>
         <image></image>
         <extraDescription></extraDescription>
     </element>
     <element id="10">
-        <description>Po 2 tygodniach kontrola morfologii z retikulocytozą."</description>
+        <description>Po 2 tygodniach kontrola morfologii z retikulocytozą.</description>
         <successors>
             <child id="12"></child>
             <child id="13"></child>
@@ -89,7 +89,7 @@
         <extraDescription></extraDescription>
     </element>
     <element id="11">
-        <description>Kontrola morfologii krwi ferrytyny."</description>
+        <description>Kontrola morfologii krwi i ferrytyny.</description>
         <successors>
         </successors>
         <image></image>

@@ -19,16 +19,18 @@ import java.util.List;
 public class SwipeAdapter extends FragmentStatePagerAdapter {
     private int parentID;
     private String xmlfile;
+    private String algName;
     private Context c;
     private int nextelement;
     private int count_successors;
     private int image;
-    public SwipeAdapter(FragmentManager fm, Context c,int parentID, String xmlfile)
+    public SwipeAdapter(FragmentManager fm, Context c,int parentID, String xmlfile, String algName)
     {
         super(fm);
         this.c = c;
         this.parentID=parentID;
         this.xmlfile = xmlfile;
+        this.algName = algName;
     }
 
     @Override
@@ -75,6 +77,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         bundle.putString("extrainfo",extrainfo);
         bundle.putInt("image",image);
         bundle.putString("xml", xmlfile);
+        bundle.putString("algName", algName);
         String prev="";
         String next="";
         if(position+1<count_successors)
